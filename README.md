@@ -1,5 +1,1 @@
-# prog-reti-logiche
-# prog-reti-logiche
-# prog-reti-logiche
-# prog-reti-logiche
-# prog-reti-logiche
+# Prova Finale di Reti Logihe - A.A. 2022-2023
