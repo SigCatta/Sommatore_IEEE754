@@ -55,6 +55,14 @@ xaw2verilog.log
 # project-wide generated files
 *.gise
 *.xise
+*.sym
+*.wdb
+*.exe
+*.intermediate
+*.cmd
+*.log
+*.xmsgs
+*.ini
 par_usage_statistics.html
 usage_statistics_webtalk.html
 webtalk.log
@@ -66,3 +74,4 @@ xlnx_auto_0_xdb/
 xst/
 _ngo/
 _xmsgs/
+isim/
