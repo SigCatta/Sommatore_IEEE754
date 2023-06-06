@@ -54,8 +54,9 @@ xaw2verilog.log
 
 # project-wide generated files
 *.gise
-*.log
 *.xmsgs
+*.cmd
+*.log
 par_usage_statistics.html
 usage_statistics_webtalk.html
 webtalk.log
