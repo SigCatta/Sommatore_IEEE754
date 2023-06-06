@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/luca/PoliMi/Progetti/Reti Logiche/Sommatore_IEEE754/FA_TB_isim_beh.exe" -prj "/home/luca/PoliMi/Progetti/Reti Logiche/Sommatore_IEEE754/FA_TB_beh.prj" "work.FA_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/RCA_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/RCA_TB_beh.prj" "work.RCA_TB" 
