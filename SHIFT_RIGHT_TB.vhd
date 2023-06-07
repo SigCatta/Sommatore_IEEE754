@@ -12,7 +12,7 @@ architecture behavior of SHIFT_RIGHT_TB is
     port(
       X: in  std_logic_vector (7 downto 0);
       S: in  std_logic_vector(2 downto 0);
-      COUT: out std_logic_vector (7 downto 0);
+      Y: out std_logic_vector (7 downto 0);
        );
     end component;
     
@@ -20,7 +20,7 @@ architecture behavior of SHIFT_RIGHT_TB is
     signal X 	: std_logic_vector(7 downto 0);
     signal S   : std_logic_vector(2 downto 0);
     --Outputs
-    signal COUT : std_logic_vector(7 downto 0);
+    signal Y : std_logic_vector(7 downto 0);
 begin
  
    UUT: SHIFT_RIGHT 
@@ -34,19 +34,19 @@ begin
  process
  begin		
           
-       X	 <= "00000000";
-       S  <= "00000000";
+       X <= "00000000";
+       S  <= "000";
 
        wait for 100 ns;	
 
-       X	 <= "11100101"; 
-       S	 <= "110";
+       X <= "11100101"; 
+       S <= "110";
 
        -- output should be 00000011
           
        wait for 20 ns;
           
-       X	 <= "01011101"; 
+       X <= "01011101"; 
        S <= "010";
 
        -- output should be 00010111
