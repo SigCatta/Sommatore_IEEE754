@@ -39,15 +39,14 @@ BEGIN
         ); 
 
    -- Stimulus process
-   stim_proc: process
+   process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
 			X <= '0';
 			Y <= '0';
 			CIN <= '0';
 				
-		wait for 20 ns;
+		wait for 100 ns;
 			X <= '1';
 			Y <= '0';
 			CIN <= '0';

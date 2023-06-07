@@ -5,10 +5,10 @@ use ieee.std_logic_1164.ALL;
 entity FA is
 
 	port(
-		X	 : in  std_logic;
-		Y	 : in  std_logic;
-		CIN	 : in  std_logic;
-		S	 : out std_logic;
+		X	  : in  std_logic;
+		Y	  : in  std_logic;
+		CIN  : in  std_logic;
+		S	  : out std_logic;
 		COUT : out std_logic
 	);
 

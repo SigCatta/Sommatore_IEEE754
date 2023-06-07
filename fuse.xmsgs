@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"/media/sf_Sommatore_IEEE754/TEST_FA_TB.vhd" Line 32: &lt;<arg fmt="%s" index="1">test_fa</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">/media/sf_Sommatore_IEEE754/TEST_FA_TB.vhd</arg>&quot; Line <arg fmt="%d" index="2">32</arg>. Instance <arg fmt="%s" index="3">test_fa</arg> is unbound
+</msg>
+
 </messages>
 
