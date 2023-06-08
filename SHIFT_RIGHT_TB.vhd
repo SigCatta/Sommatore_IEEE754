@@ -20,7 +20,7 @@ architecture behavior of SHIFT_RIGHT_TB is
     signal X   : std_logic_vector(23 downto 0);
     signal S   : std_logic_vector(7 downto 0);
     --Outputs
-    signal Y : std_logic_vector(23 downto 0);
+    signal Y   : std_logic_vector(23 downto 0);
 begin
  
    UUT: SHIFT_RIGHT 
@@ -34,19 +34,19 @@ begin
  begin		
           
        X <= "000000000000000000000000";
-       S  <= "00000";
+       S  <= "00000000";
 
        wait for 100 ns;	
 
        X <= "010101010101010101010101"; 
-       S <= "11000";
+       S <= "00011000";
 
        -- output should be 00000000000000000000000
           
        wait for 20 ns;
           
        X <= "11001001101011011100001"; 
-       S <= "00010";
+       S <= "00000010";
 
        -- output should be 00110010011010110111000
        wait;

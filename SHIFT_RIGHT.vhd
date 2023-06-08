@@ -14,8 +14,8 @@ end SHIFT_RIGHT;
 architecture STRUCT of SHIFT_RIGHT is
 begin
     with S select
-    Y <= X when "00000",
-            '0' & X(23 downto 1) when "00000001",
+    Y <= X when "00000000",
+            "0" & X(23 downto 1) when "00000001",
             "00" & X(23 downto 2) when "00000010",
             "000" & X(23 downto 3) when "00000011",
             "0000" & X(23 downto 4) when "00000100",
