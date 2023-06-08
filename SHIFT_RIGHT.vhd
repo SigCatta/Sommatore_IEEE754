@@ -15,7 +15,7 @@ architecture STRUCT of SHIFT_RIGHT is
 begin
     with S select
     Y <= X when "000",
-            ’0’ & X(7 to 1) when "001",
+            '0' & X(7 to 1) when "001",
             "00" & X(7 to 2) when "010",
             "000" & X(7 to 3) when "011",
             "0000" & X(7 to 4) when "100",
