@@ -27,7 +27,7 @@ begin
          port map (
                X => X,
                S => S,
-               COUT => COUT
+               Y => Y
              );
 
  process
