@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/TEST_FA_TB_isim_par.exe" -prj "/media/sf_Sommatore_IEEE754/TEST_FA_TB_par.prj" "work.TEST_FA_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/EXPDIFF_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/EXPDIFF_TB_beh.prj" "work.EXPDIFF_TB" 
