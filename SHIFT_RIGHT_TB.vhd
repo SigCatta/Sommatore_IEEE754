@@ -10,14 +10,14 @@ architecture behavior of SHIFT_RIGHT_TB is
  
     component SHIFT_RIGHT
     port(
-      X: in  std_logic_vector (7 downto 0);
+      X: in  std_logic_vector(7 downto 0);
       S: in  std_logic_vector(2 downto 0);
-      Y: out std_logic_vector (7 downto 0);
+      Y: out std_logic_vector (7 downto 0)
        );
     end component;
     
     --Inputs
-    signal X 	: std_logic_vector(7 downto 0);
+    signal X   : std_logic_vector(7 downto 0);
     signal S   : std_logic_vector(2 downto 0);
     --Outputs
     signal Y : std_logic_vector(7 downto 0);
