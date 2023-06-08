@@ -7,7 +7,7 @@ entity SHIFT_RIGHT is
     port(
         X: in  std_logic_vector (7 downto 0);
         S: in  std_logic_vector(2 downto 0);
-        Y: out std_logic_vector (7 downto 0);
+        Y: out std_logic_vector (7 downto 0)
     );
 end SHIFT_RIGHT;
 
