@@ -24,7 +24,6 @@ architecture behavior of SHIFT_RIGHT_TB is
 begin
  
    UUT: SHIFT_RIGHT 
-         generic map (width => 8)
          port map (
                X => X,
                S => S,
