@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.ALL;
 
-entity EXPDIFF is
+entity ABSDIFF is
     generic(width: integer);
     port(
         X    : in  std_logic_vector (width - 1 downto 0);
@@ -9,9 +9,9 @@ entity EXPDIFF is
         Z    : out std_logic_vector (width - 1 downto 0);
         C    : inout std_logic                              -- 1 if y is greater the x, 0 otherwise 
     );
-end EXPDIFF;
+end ABSDIFF;
 
-architecture STRUCT of EXPDIFF is
+architecture STRUCT of ABSDIFF is
     component RCA is        -- subtracts X and Y
         generic(width : integer := width);
         port(

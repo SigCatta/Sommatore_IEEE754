@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.ALL;
  
 
-entity EXPDIFF_TB is
-end EXPDIFF_TB;
+entity ABSDIFF_TB is
+end ABSDIFF_TB;
  
-architecture behavior of EXPDIFF_TB is 
+architecture behavior of ABSDIFF_TB is 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    component EXPDIFF
+    component ABSDIFF
       generic(width: integer := 8);      -- using 8 bits
       port(
          X : in  std_logic_vector(7 downto 0);
@@ -31,7 +31,7 @@ architecture behavior of EXPDIFF_TB is
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: EXPDIFF 
+   UUT: ABSDIFF 
 	port map (
           X => X,
           Y => Y,
