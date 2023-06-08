@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 
 entity RCA is
-    generic(width: integer := 22);
+    generic(width: integer);
     port(
         X    : in  std_logic_vector (width - 1 downto 0);
         Y    : in  std_logic_vector (width - 1 downto 0);
