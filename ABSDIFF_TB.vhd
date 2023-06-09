@@ -9,12 +9,11 @@ architecture behavior of ABSDIFF_TB is
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    component ABSDIFF
-      generic(width: integer := 8);      -- using 8 bits
+    component ABSDIFF is
       port(
-         X : in  std_logic_vector(7 downto 0);
-         Y : in  std_logic_vector(7 downto 0);
-         Z : out  std_logic_vector(7 downto 0);
+         X : in  	  std_logic_vector(7 downto 0);
+         Y : in  	  std_logic_vector(7 downto 0);
+         Z : out 	  std_logic_vector(7 downto 0);
          C : inout  std_logic
         );
     end component;

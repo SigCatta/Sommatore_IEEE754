@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 
 entity ABSDIFF is
-    generic(width: integer);
+    generic(width: integer := 8);
     port(
         X    : in  std_logic_vector (width - 1 downto 0);
         Y    : in  std_logic_vector (width - 1 downto 0);
@@ -78,4 +78,3 @@ begin
     );
 
 end STRUCT;
-

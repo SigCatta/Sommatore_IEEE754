@@ -3,7 +3,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 
 entity C2C is
-    generic(width: integer);
+    generic(width: integer := 8);
     port(
         N    : in  std_logic_vector (width - 1 downto 0);
         S    : in  std_logic;
@@ -39,4 +39,3 @@ begin
     COUT <= C(width);
 
 end STRUCT;
-
