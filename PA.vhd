@@ -1,23 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.ALL;
 
-entity RCA is
-    generic(width: integer := 8);
+entity PA is
+    generic(width: integer);
     port(
         X    : in  std_logic_vector (width - 1 downto 0);
-        Y    : in  std_logic_vector (width - 1 downto 0);
         CIN  : in  std_logic;
         S    : out std_logic_vector (width - 1 downto 0);
         COUT : out std_logic
     );
-end RCA;
+end PA;
 
-architecture STRUCT of RCA is
+architecture STRUCT of PA is
 
-    component FA is 
+    component HA is 
     port(
 		X	 : in  std_logic;
-		Y	 : in  std_logic;
 		CIN	 : in  std_logic;
 		S	 : out std_logic;
 		COUT : out std_logic
@@ -28,9 +26,8 @@ architecture STRUCT of RCA is
 begin
     
     GEN: for I in 0 to width - 1 generate
-        U: FA port map(
+        U: HA port map(
             X    => X(I),
-            Y    => Y(I),
             CIN  => C(I),
             S    => S(I),
             COUT => C(I + 1)

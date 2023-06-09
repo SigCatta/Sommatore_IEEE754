@@ -14,6 +14,5 @@ end MUX2;
 architecture Behavioral of MUX2 is
 
 begin
-    COUT <= ( A and not S ) or ( B and S) after 1;
+    COUT <= ( A and (not S) ) or ( B and S);
 end Behavioral;
-

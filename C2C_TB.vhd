@@ -7,15 +7,15 @@ end C2C_TB;
 architecture behavior OF C2C_TB IS 
  
  
-    component C2C
-	 generic(width: integer := 8);      -- using a 8 bit C2C
-    port(
-         N    : in  std_logic_vector(7 downto 0);
-         S    : in  std_logic;
-         Z    : out std_logic_vector(7 downto 0);
-         COUT : out std_logic
-      );
-    end component;
+   component C2C
+      generic(width: integer := 8);      -- using a 8 bit C2C
+         port(
+            N    : in  std_logic_vector(7 downto 0);
+            S    : in  std_logic;
+            Z    : out std_logic_vector(7 downto 0);
+            COUT : out std_logic
+         );
+   end component;
     
 
    --Inputs
@@ -29,12 +29,13 @@ architecture behavior OF C2C_TB IS
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: C2C port map (
-          N    => N,
-          S    => S,
-          Z    => Z,
-          COUT => COUT 
-        );
+   UUT: C2C 
+      port map (
+         N    => N,
+         S    => S,
+         Z    => Z,
+         COUT => COUT 
+      );
 
    process
    begin		
