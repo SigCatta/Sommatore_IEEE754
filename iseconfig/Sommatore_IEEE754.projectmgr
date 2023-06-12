@@ -7,19 +7,23 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|ABSDIFF.vhd/U1 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|ABSDIFF.vhd/U2 - PA - STRUCT</ClosedNode>
+         <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|ABSDIFF.vhd/U3 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF.vhd</ClosedNode>
          <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF.vhd/U1 - RCA - STRUCT</ClosedNode>
          <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF.vhd/U2 - PA - STRUCT</ClosedNode>
+         <ClosedNode>/C2C - STRUCT |media|sf_Sommatore_IEEE754|C2C.vhd</ClosedNode>
          <ClosedNode>/C2C - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|C2C.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ABSDIFF - STRUCT (/media/sf_Sommatore_IEEE754/ABSDIFF.vhd)</SelectedItem>
+         <SelectedItem>U1 - RCA - STRUCT (/media/sf_Sommatore_IEEE754/RCA.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000138000000020000000000000000000000000200000064ffffffff000000810000000300000002000001380000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000130000000020000000000000000000000000200000064ffffffff000000810000000300000002000001300000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>ABSDIFF - STRUCT (/media/sf_Sommatore_IEEE754/ABSDIFF.vhd)</CurrentItem>
+      <CurrentItem>U1 - RCA - STRUCT (/media/sf_Sommatore_IEEE754/RCA.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -35,7 +39,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -66,7 +70,8 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF.vhd</ClosedNode>
-         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd</ClosedNode>
+         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT/U1 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT/U2 - PA - STRUCT</ClosedNode>
          <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF_TB.vhd</ClosedNode>
          <ClosedNode>/C2C - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|C2C.vhd</ClosedNode>
          <ClosedNode>/C2C_TB - behavior |media|sf_Sommatore_IEEE754|C2C_TB.vhd</ClosedNode>
@@ -80,7 +85,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000150000000020000000000000000000000000200000064ffffffff000000810000000300000002000001500000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000156000000020000000000000000000000000200000064ffffffff000000810000000300000002000001560000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
@@ -115,10 +120,13 @@
    <ItemView engineview="PostRouteSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
-         <ClosedNode></ClosedNode>
+         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd</ClosedNode>
          <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF_TB.vhd</ClosedNode>
+         <ClosedNode>/C2C_TB - behavior |media|sf_Sommatore_IEEE754|C2C_TB.vhd</ClosedNode>
          <ClosedNode>/C2C_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|C2C_TB.vhd</ClosedNode>
+         <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
          <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
+         <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -126,8 +134,8 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000b7000000020000000000000000000000000200000064ffffffff000000810000000300000002000000b70000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000150000000020000000000000000000000000200000064ffffffff000000810000000300000002000001500000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>ABSDIFF_TB - behavior (/media/sf_Sommatore_IEEE754/ABSDIFF_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" sourcetype="" guiview="Process" >
@@ -136,13 +144,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="PostRouteSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -190,4 +198,18 @@
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000014c0000011d01000000060100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e90000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
 </Project>

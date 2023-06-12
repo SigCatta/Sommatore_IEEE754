@@ -1,22 +1,22 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
+library ieee;
+use ieee.std_logic_1164.ALL;
  
-ENTITY FA_TB IS
-END FA_TB;
+entity FA_TB is
+end FA_TB;
  
-ARCHITECTURE behavior OF FA_TB IS 
+architecture behavior of FA_TB is 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT FA
-    PORT(
+    component FA
+    port(
          X : IN  std_logic;
          Y : IN  std_logic;
          CIN : IN  std_logic;
          S : OUT  std_logic;
          COUT : OUT  std_logic
         );
-    END COMPONENT;
+    end component;
     
 
    --Inputs
@@ -28,10 +28,10 @@ ARCHITECTURE behavior OF FA_TB IS
    signal S : std_logic;
    signal COUT : std_logic;
  
-BEGIN
+begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: FA PORT MAP (
+   UUT: FA port map (
           X => X,
           Y => Y,
           CIN => CIN,
@@ -70,4 +70,4 @@ BEGIN
 		wait;
    end process;
 
-END;
+end;

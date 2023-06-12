@@ -7,12 +7,12 @@ entity MUX2 is
        A: in std_logic;
        B: in std_logic;
        S: in std_logic;
-       COUT: out std_logic
+       Z: out std_logic
  );
 end MUX2;
 
 architecture Behavioral of MUX2 is
 
 begin
-    COUT <= ( A and (not S) ) or ( B and S);
+    Z <= ( A and (not S) ) or ( B and S);
 end Behavioral;
