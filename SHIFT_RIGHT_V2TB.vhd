@@ -1,22 +1,22 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
  
 
 
-ENTITY SHIFT_RHIGT_V2_TB IS
-END SHIFT_RHIGT_V2_TB;
+entity SHIFT_RIGHT_V2_TB is
+end SHIFT_RIGHT_V2_TB;
  
-ARCHITECTURE behavior OF SHIFT_RHIGT_V2_TB IS 
+architecture behavior of SHIFT_RIGHT_V2_TB is 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT SHIFT_RHIGT_V2
-    PORT(
+    component SHIFT_RIGHT_V2
+    port(
       X: in  std_logic_vector(23 downto 0);
       S: in  std_logic_vector(7 downto 0);
       Y: out std_logic_vector (23 downto 0)
         );
-    END COMPONENT;
+    end component;
    
      --Inputs
      signal X   : std_logic_vector(23 downto 0);
@@ -27,7 +27,7 @@ ARCHITECTURE behavior OF SHIFT_RHIGT_V2_TB IS
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: SHIFT_RHIGT_V2 PORT MAP (
+   uut: SHIFT_RIGHT_V2 port map (
             X => X,
             S => S,
             Y => Y
@@ -54,4 +54,4 @@ begin
    wait;
    end process;
 
-END;
+end;

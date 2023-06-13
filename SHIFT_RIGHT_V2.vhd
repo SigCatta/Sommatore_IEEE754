@@ -2,15 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 
-entity SHIFT_RHIGT_V2 is
+entity SHIFT_RIGHT_V2 is
     port(
         X: in  std_logic_vector(23 downto 0);
         S: in  std_logic_vector(7 downto 0);
         Y: out std_logic_vector(23 downto 0)
     );
-end SHIFT_RHIGT_V2;
+end SHIFT_RIGHT_V2;
 
-architecture Behavioral of SHIFT_RHIGT_V2 is
+architecture Behavioral of SHIFT_RIGHT_V2 is
 
     signal posUNO:   std_logic_vector(23 downto 0) := "000000000000000000000000";
 	signal posDUE: std_logic_vector(23 downto 0) := "000000000000000000000000";
