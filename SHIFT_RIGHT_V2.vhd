@@ -29,7 +29,7 @@ begin
 		
 		posCINQUE  <= "0000000000000000" & posQUATTRO(23 downto 16)	when S(4)='1' else posQUATTRO;
 		
-		Y  <=   "000000000000000000000000000" when S(5) ='1' or S(6)='1'  or  S(7)='1'
+		Y  <=   "000000000000000000000000" when S(5) ='1' or S(6)='1'  or  S(7)='1'
 				else posCINQUE;
 
 end Behavioral;
