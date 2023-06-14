@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/DENORMALIZE_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/DENORMALIZE_TB_beh.prj" "work.DENORMALIZE_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/CLU_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/CLU_TB_beh.prj" "work.CLU_TB" 
