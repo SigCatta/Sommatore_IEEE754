@@ -35,10 +35,10 @@ begin
 	YINF <= (Y(31) xor SUB) & (YEXP255 and (not YMANN0));
 	
 		-- result is +inf if the operands are: inf + inf, inf + n or n + inf 		~ result optimized with karnaugh map
-	PINF <= (((not YINF(0)) and XINF(0)) and ((not YINF(1)) or (not XINF(1)))) or (((not XINF(1)) and XINF(0)) and ((not YINF(0)) or (not YINF(1))));
+	PINF <= (( (not XINF(1)) and XINF(0) ) and ( (not YINF(1)) or (not YINF(0)) )) or (( (not YINF(1)) and YINF(0) ) and ( (not XINF(1)) or (not XINF(0)) ));
 	
 		-- result is -inf if the operands are: -inf -inf, -inf +n or n -inf			~ result optimized with karnaugh map
-	NINF <= ((XINF(0) and XINF(1)) and (YINF(1) or (not YINF(0)))) or (YINF(0) and YINF(1) and (not XINF(0)));
+	NINF <= (( XINF(1) and XINF(0) ) and ( YINF(1) or (not YINF(0)) )) or ((  YINF(1) and YINF(0) ) and ( XINF(1) or (not XINF(0)) ));
 		
 	-- set NAN
 	XNAN <= XEXP255 and XMANN0;
