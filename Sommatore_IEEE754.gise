@@ -23,6 +23,7 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="ABSDIFF_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="DENORMALIZED_SUM_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="FA_guide.ncd" xil_pn:origination="imported"/>
   </files>
 

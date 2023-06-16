@@ -96,7 +96,7 @@ begin
 		
 	U4: MUX						-- gives the larger number's mantissa to a conditonal 2's complement (C2C) module
 		port map(
-			X => '1' & X(22 downto 0),			-- y > x (s = 1) ~ 
+			X => '1' & X(22 downto 0),			-- y > x (s = 1)
 			Y => '1' & Y(22 downto 0),			-- x > y (s = 0)
 			S => C,
 			Z => M2
