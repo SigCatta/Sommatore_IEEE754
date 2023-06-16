@@ -17,7 +17,7 @@ architecture Behavioral of MUX is
         port( 
             A    : in  std_logic;
             B    : in  std_logic;
-				S    : in  std_logic;
+			S    : in  std_logic;
             Z	  : out std_logic
         );
     end component;

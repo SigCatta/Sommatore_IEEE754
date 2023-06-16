@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/CLU_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/CLU_TB_beh.prj" "work.CLU_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/media/sf_prog-reti-logiche/NORMALIZER_TB_isim_beh.exe" -prj "/media/sf_prog-reti-logiche/NORMALIZER_TB_beh.prj" "work.NORMALIZER_TB" 

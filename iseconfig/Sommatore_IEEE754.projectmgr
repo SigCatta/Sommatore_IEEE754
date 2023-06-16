@@ -24,15 +24,20 @@
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U4 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U5 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U6 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U1 - ABSDIFF - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U3 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U4 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U5 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U6 - C2C - STRUCT</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>CLU - Behavioral (/media/sf_Sommatore_IEEE754/CLU.vhd)</SelectedItem>
+         <SelectedItem>U2 - SHIFT_RIGHT_V2 - Behavioral (/media/sf_prog-reti-logiche/SHIFT_RIGHT_V2.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ce000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ce0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>CLU - Behavioral (/media/sf_Sommatore_IEEE754/CLU.vhd)</CurrentItem>
+      <CurrentItem>U2 - SHIFT_RIGHT_V2 - Behavioral (/media/sf_prog-reti-logiche/SHIFT_RIGHT_V2.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -47,7 +52,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016f0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001eb000000010000000100000000000000000000000064ffffffff000000810000000000000001000001eb0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Check Syntax</CurrentItem>
    </ItemView>
@@ -60,7 +65,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000039f000000040101000100000000000000000000000064ffffffff0000008100000000000000040000006c00000001000000000000005d0000000100000000000000840000000100000000000002520000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000390000000040101000100000000000000000000000064ffffffff0000008100000000000000040000006c00000001000000000000005d0000000100000000000000840000000100000000000002430000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>PRI_ENC_TB.vhd</CurrentItem>
    </ItemView>
@@ -87,6 +92,7 @@
          <ClosedNode>/C2C - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|C2C.vhd</ClosedNode>
          <ClosedNode>/C2C_TB - behavior |media|sf_Sommatore_IEEE754|C2C_TB.vhd</ClosedNode>
          <ClosedNode>/C2C_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|C2C_TB.vhd</ClosedNode>
+         <ClosedNode>/C2C_TB - behavior |media|sf_prog-reti-logiche|C2C_TB.vhd</ClosedNode>
          <ClosedNode>/CLU_TB - behavior |media|sf_Sommatore_IEEE754|CLU_TB.vhd</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd</ClosedNode>
@@ -95,21 +101,31 @@
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U4 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U5 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U6 - C2C - STRUCT</ClosedNode>
-         <ClosedNode>/C2C_TB - behavior |media|sf_prog-reti-logiche|C2C_TB.vhd</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U1 - ABSDIFF - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U3 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U4 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U5 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U6 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
          <ClosedNode>/FA_TB - behavior |media|sf_prog-reti-logiche|FA_TB.vhd</ClosedNode>
+         <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U3 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U4 - PA - STRUCT</ClosedNode>
+         <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U5 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U6 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/PRI_ENC_TB - behavior |media|sf_prog-reti-logiche|PRI_ENC_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|RCA_TB.vhd/UUT - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/RCA_TB - behavior |media|sf_prog-reti-logiche|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/SHIFT_RIGHT_V2_TB - behavior |media|sf_Sommatore_IEEE754|SHIFT_RIGHT_V2TB.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>PRI_ENC_TB - behavior (/media/sf_prog-reti-logiche/PRI_ENC_TB.vhd)</SelectedItem>
+         <SelectedItem>NORMALIZER_TB - behavior (/media/sf_prog-reti-logiche/NORMALIZER_TB.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d10000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e20000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>PRI_ENC_TB - behavior (/media/sf_prog-reti-logiche/PRI_ENC_TB.vhd)</CurrentItem>
+      <CurrentItem>NORMALIZER_TB - behavior (/media/sf_prog-reti-logiche/NORMALIZER_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -117,26 +133,26 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e5000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e50000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem>ISim Simulator</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001eb000000010000000100000000000000000000000064ffffffff000000810000000000000001000001eb0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem>ISim Simulator</CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -219,8 +235,8 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
-   <SourceProcessView>000000ff0000000000000002000001360000013601000000060100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <SourceProcessView>000000ff0000000000000002000001b1000000f201000000060100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
