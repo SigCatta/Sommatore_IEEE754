@@ -16,6 +16,7 @@ architecture behavior of DENORMALIZE_TB is
 			SUB:	  in	  std_logic;
 			DNORMX: out   std_logic_vector(24 downto 0);
 			DNORMY: out	  std_logic_vector(24 downto 0);
+			EXP	: out	  std_logic_vector(7 downto 0);
 			C:		  inout std_logic
 		);
 	end component;
@@ -31,6 +32,7 @@ architecture behavior of DENORMALIZE_TB is
    signal C		  : std_logic;
    signal DNORMX : std_logic_vector(24 downto 0);
    signal DNORMY : std_logic_vector(24 downto 0);
+	signal EXP	  : std_logic_vector(7 downto 0);
 
 begin
  
@@ -42,6 +44,7 @@ begin
 		SUB	 => SUB,
 		DNORMX => DNORMX,
 		DNORMY => DNORMY,
+		EXP	 => EXP,
 		C		 => C
 	);
 
@@ -65,6 +68,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0101001111010000000000000 ~ 10985472
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -75,6 +79,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000000000100111101011 ~ 2539
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -85,6 +90,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000001100000000000000 ~ 49152
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 		
 		
 -- SUB = 1, X positive, Y positive
@@ -98,6 +104,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 1010110000110000000000000 ~ -10985472
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -108,6 +115,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 1111111111111011000010101 ~ -2539
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -118,6 +126,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 1111111110100000000000000 ~ -49152
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 		
 		
 -- SUB = 1, X positive, Y negative ~ should work just like SUB = 0, X positive, Y positive
@@ -132,6 +141,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0101001111010000000000000 ~ 10985472
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -142,6 +152,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000000000100111101011 ~ 2539
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -152,6 +163,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000001100000000000000 ~ 49152
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
+		-- EXP should be 10001001 - 137
 
 -- SUB = 0, X negative, Y positive
       
@@ -165,6 +177,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0101001111010000000000000 ~ 10985472
 		-- DNORMY should be 0110110110100000000000000 ~ -14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -175,6 +188,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000000000100111101011 ~ 2539
 		-- DNORMY should be 0110110110100000000000000 ~ -14368768
+		-- EXP should be 10001001 - 137
 	
 	wait for 20 ns;
 		
@@ -185,6 +199,7 @@ begin
 		-- C should be 0
 		-- DNORMX should be 0000000001100000000000000 ~ 49152
 		-- DNORMY should be 0110110110100000000000000 ~ -14368768
+		-- EXP should be 10001001 - 137
 	wait;
 	end process;
 

@@ -45,7 +45,7 @@ architecture STRUCT of ABSDIFF is
     
     signal S     : std_logic_vector(width - 1 downto 0);     -- Ex - Ey
     signal NOTS  : std_logic_vector(width - 1 downto 0);     -- Ey - Ex
-	 signal COUT  : std_logic;
+	signal COUT  : std_logic;
 
 begin
 
