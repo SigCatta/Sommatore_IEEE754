@@ -5,7 +5,6 @@ entity DENORMALIZED_SUM is
 	port(
 		X:		  in	 std_logic_vector(24 downto 0);
 		Y:		  in	 std_logic_vector(24 downto 0);
-		SUB:	  in	 std_logic;
 		M:		  out  std_logic_vector(23 downto 0);
 		C: 	  out  std_logic
 	);

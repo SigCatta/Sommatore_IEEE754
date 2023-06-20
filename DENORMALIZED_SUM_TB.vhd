@@ -13,7 +13,6 @@ architecture behavior of DENORMALIZED_SUM_TB is
    	port(
 		X:		  in	 std_logic_vector(24 downto 0);
 		Y:		  in	 std_logic_vector(24 downto 0);
-		SUB:	  in	 std_logic;
 		M:		  out  std_logic_vector(23 downto 0);
 		C: 	  out  std_logic								-- the last of the sum between X and Y
 	);
@@ -23,7 +22,6 @@ architecture behavior of DENORMALIZED_SUM_TB is
    --Inputs
    signal X   : std_logic_vector(24 downto 0);
    signal Y   : std_logic_vector(24 downto 0);
-   signal SUB : std_logic;
 
 
  	--Outputs
@@ -38,7 +36,6 @@ begin
 	port map (
 		X		 => X,
 		Y		 => Y,
-		SUB	 => SUB,
 		M		 => M,
 		C		 => C
 	);
@@ -49,13 +46,11 @@ begin
 
 		X 	 <= "0000000000000000000000000";
 		Y 	 <= "0000000000000000000000000";
-		SUB  <= '0';
 
 	wait for 100 ns;
 	
 		X 	 <= "0000000000000011011010001"; -- 1745
 		Y 	 <= "1111111111111110011011111"; -- -801
-		SUB  <= '0';
 		
 		-- output should be 944
 		
@@ -63,7 +58,6 @@ begin
 	
 		X 	 <= "1111111111111100100101111"; -- -1745
 		Y 	 <= "1111111111111110011011111"; -- -801
-		SUB  <= '0';
 		
 		-- output should be 2546
 		
@@ -71,7 +65,6 @@ begin
 	
 		X 	 <= "0000000000000011011010001"; -- 1745
 		Y 	 <= "0000000000000001100100001"; -- 801
-		SUB  <= '0';
 		
 		-- output should be 944
 		
@@ -79,7 +72,6 @@ begin
 	
 		X 	 <= "1111111111111100100101111"; -- -1745
 		Y 	 <= "0000000000000001100100001"; -- 801
-		SUB  <= '0';
 		
 		-- output should be 944
 		
