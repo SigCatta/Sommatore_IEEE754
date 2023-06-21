@@ -11,10 +11,11 @@ architecture behavior of DENORMALIZED_SUM_TB is
  
 	component DENORMALIZED_SUM is
    	port(
-		X:		  in	 std_logic_vector(24 downto 0);
-		Y:		  in	 std_logic_vector(24 downto 0);
-		M:		  out  std_logic_vector(23 downto 0);
-		C: 	  out  std_logic								-- the last of the sum between X and Y
+		X:      in	 std_logic_vector(24 downto 0);
+		Y:      in	 std_logic_vector(24 downto 0);
+		M:      out  std_logic_vector(23 downto 0);
+		SIGN:   out  std_logic;
+		INCR:   out  std_logic
 	);
 	end component;
     
@@ -26,18 +27,19 @@ architecture behavior of DENORMALIZED_SUM_TB is
 
  	--Outputs
    signal M : std_logic_vector(23 downto 0);
-   signal C : std_logic;
-
+   signal SIGN : std_logic;
+   signal INCR : std_logic;
 
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
 	UUT: DENORMALIZED_SUM
 	port map (
-		X		 => X,
-		Y		 => Y,
-		M		 => M,
-		C		 => C
+		X    => X,
+		Y    => Y,
+		M    => M,
+		SIGN => SIGN,
+		INCR => INCR
 	);
 
    -- Stimulus process
@@ -52,28 +54,29 @@ begin
 		X 	 <= "0000000000000011011010001"; -- 1745
 		Y 	 <= "1111111111111110011011111"; -- -801
 		
-		-- output should be 944
-		
 	wait for 20 ns;
 	
 		X 	 <= "1111111111111100100101111"; -- -1745
 		Y 	 <= "1111111111111110011011111"; -- -801
 		
-		-- output should be 2546
-		
 	wait for 20 ns;
 	
-		X 	 <= "0000000000000011011010001"; -- 1745
-		Y 	 <= "0000000000000001100100001"; -- 801
+		X 	 <= "0110110100010000000000000"; -- 1745
+		Y 	 <= "0011001000010000000000000"; -- 801
 		
-		-- output should be 944
 		
 	wait for 20 ns;
 	
 		X 	 <= "1111111111111100100101111"; -- -1745
 		Y 	 <= "0000000000000001100100001"; -- 801
 		
-		-- output should be 944
+	wait for 20 ns;
+	
+		X 	 <= "1001001011110000000000000"; -- 1745
+		Y 	 <= "1100110111110000000000000"; -- 801
+		
+		-- SIGN should be 1
+		-- INCR should be 1
 		
 	wait;
 	end process;

@@ -3,17 +3,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DENORMALIZED_SUM is
 	port(
-		X:		  in	 std_logic_vector(24 downto 0);
-		Y:		  in	 std_logic_vector(24 downto 0);
-		M:		  out  std_logic_vector(23 downto 0);
-		SIGN:   out  std_logic
+		X:    in  std_logic_vector(24 downto 0);
+		Y:    in  std_logic_vector(24 downto 0);
+		M:    out std_logic_vector(23 downto 0);
+		SIGN: out std_logic;
+		INCR: out std_logic -- indicats if the the exponent will have to be incremented by one 
 	);
 end DENORMALIZED_SUM;
 
 architecture Behavioral of DENORMALIZED_SUM is
 
 	component RCA is
-		generic(width: integer := 25);
+		generic(width: integer := 26);
 		port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			Y    : in  std_logic_vector (width - 1 downto 0);
@@ -33,24 +34,27 @@ architecture Behavioral of DENORMALIZED_SUM is
 		);
 	end component;
 	
-	signal S: std_logic_vector(24 downto 0);
+	signal S: std_logic_vector(25 downto 0);
+	signal COUT : std_logic;
 
 begin
 
 	U1: RCA
 		port map(
-			X => X,
-			Y => Y,
+			X   => X(24) & X,
+			Y   => Y(24) & Y,
 			CIN => '0',
-			S => S
+			S   => S,
+			COUT => COUT
 		);
-	
-	SIGN <= S(24);
+		
+	INCR <= S(24) xor S(25);
+	SIGN <= S(25);
 	
 	U2: C2C
 		port map(
 			N => S(23 downto 0),
-			S => S(24),
+			S => S(25),
 			Z => M
 		);
 	
