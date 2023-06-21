@@ -13,8 +13,7 @@ architecture behavior of ABSDIFF_TB is
       port(
          X : in  	  std_logic_vector(7 downto 0);
          Y : in  	  std_logic_vector(7 downto 0);
-         Z : out 	  std_logic_vector(7 downto 0);
-         C : inout  std_logic
+         Z : out 	  std_logic_vector(7 downto 0)
         );
     end component;
     
@@ -25,7 +24,6 @@ architecture behavior of ABSDIFF_TB is
 
  	--Outputs
    signal Z : std_logic_vector(7 downto 0);
-   signal C : std_logic;
   
 BEGIN
  
@@ -34,8 +32,7 @@ BEGIN
 	port map (
           X => X,
           Y => Y,
-          Z => Z,
-          C => C
+          Z => Z
         );
 
    -- Stimulus process

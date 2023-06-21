@@ -7,7 +7,7 @@ entity ABSDIFF is
         X    : in  std_logic_vector (width - 1 downto 0);
         Y    : in  std_logic_vector (width - 1 downto 0);
         Z    : out std_logic_vector (width - 1 downto 0);
-        C    : inout std_logic                              -- 1 if y is greater the x, 0 otherwise 
+        C    : out std_logic                              -- 1 if y is greater the x, 0 otherwise 
     );
 end ABSDIFF;
 
@@ -55,13 +55,12 @@ begin
         CIN => '1',
         S => S,
         COUT => COUT           -- if the number is positive C will be 0, 1 otherwise
-	 );
+    );
     -- we have to take the opposite of COUT because the 'sing' bit would be the 9'th, therefore it's not present
     -- this means that if the carry of the last addition is 1, it should be added to the 'sign' bit, which is always 1
     -- therefore, since there always is a "9'th bit" with the value of 1, the real carry is the opposite of what is computed
 
-
-	 C <= not COUT;
+	C <= not COUT;
 
     U2: PA port map(
         X => not S,
@@ -69,11 +68,11 @@ begin
         S => NOTS
     );
 	 
-	 U3: MUX port map(	 
+	U3: MUX port map(	 
         X => S,
         Y => NOTS,
-        S => C,
+        S => not COUT,          -- same as C out
         Z => Z
-	 );
+	);
 
 end STRUCT;

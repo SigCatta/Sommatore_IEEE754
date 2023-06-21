@@ -10,28 +10,26 @@ architecture behavior of DENORMALIZE_TB is
     -- Component Declaration for the Unit Under Test (UUT)
  
 	component DENORMALIZE is
-   	port(
+	port(
 			X:		  in	  std_logic_vector(31 downto 0);
 			Y:		  in	  std_logic_vector(31 downto 0);
 			SUB:	  in	  std_logic;
 			DNORMX: out   std_logic_vector(24 downto 0);
 			DNORMY: out	  std_logic_vector(24 downto 0);
-			EXP	: out	  std_logic_vector(7 downto 0);
-			C:		  inout std_logic
+			EXP	: out	  std_logic_vector(7 downto 0)
 		);
 	end component;
     
 
    --Inputs
-   signal X   : std_logic_vector(31 downto 0);
-   signal Y   : std_logic_vector(31 downto 0);
-   signal SUB : std_logic;
+	signal X   : std_logic_vector(31 downto 0);
+	signal Y   : std_logic_vector(31 downto 0);
+	signal SUB : std_logic;
 
 
  	--Outputs
-   signal C		  : std_logic;
-   signal DNORMX : std_logic_vector(24 downto 0);
-   signal DNORMY : std_logic_vector(24 downto 0);
+	signal DNORMX : std_logic_vector(24 downto 0);
+	signal DNORMY : std_logic_vector(24 downto 0);
 	signal EXP	  : std_logic_vector(7 downto 0);
 
 begin
@@ -44,14 +42,12 @@ begin
 		SUB	 => SUB,
 		DNORMX => DNORMX,
 		DNORMY => DNORMY,
-		EXP	 => EXP,
-		C		 => C
+		EXP	 => EXP
 	);
 
    -- Stimulus process
    process
    begin		
-
 		X 	 <= "00000000000000000000000000000000";
 		Y 	 <= "00000000000000000000000000000000";
 		SUB  <= '0';
@@ -91,7 +87,6 @@ begin
 		-- DNORMX should be 0000000001100000000000000 ~ 49152
 		-- DNORMY should be 0110110110100000000000000 ~ 14368768
 		-- EXP should be 10001001 - 137
-		
 		
 -- SUB = 1, X positive, Y positive
       
