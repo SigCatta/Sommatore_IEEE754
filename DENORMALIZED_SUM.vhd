@@ -6,7 +6,7 @@ entity DENORMALIZED_SUM is
 		X:		  in	 std_logic_vector(24 downto 0);
 		Y:		  in	 std_logic_vector(24 downto 0);
 		M:		  out  std_logic_vector(23 downto 0);
-		C: 	  out  std_logic
+		SIGN:   out  std_logic
 	);
 end DENORMALIZED_SUM;
 
@@ -23,8 +23,8 @@ architecture Behavioral of DENORMALIZED_SUM is
 		);
 	end component;
 	 
-	component C2C is								-- calculate the result's 2's complement if necessary
-		generic(width: integer := 25);
+	component C2C is								-- calculates the result's 2's complement if necessary
+		generic(width: integer := 24);
 		port(
 			N    : in  std_logic_vector (width - 1 downto 0);
 			S    : in  std_logic;
@@ -44,15 +44,15 @@ begin
 			CIN => '0',
 			S => S
 		);
-		
+	
+	SIGN <= S(24);
+	
 	U2: C2C
 		port map(
-			N => S,
+			N => S(23 downto 0),
 			S => S(24),
-			Z(23 downto 0) => M,
-			Z(24) => C
+			Z => M
 		);
-		
-
+	
 end Behavioral;
 

@@ -24,21 +24,25 @@
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U4 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U5 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U6 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd/U9 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U1 - ABSDIFF - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U3 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U4 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U5 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U6 - C2C - STRUCT</ClosedNode>
-         <ClosedNode>/DENORMALIZED_SUM - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM.vhd</ClosedNode>
+         <ClosedNode>/DENORMALIZED_SUM - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM.vhd/U1 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/DENORMALIZED_SUM - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM.vhd/U2 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/NORMALIZER - Behavioral |media|sf_Sommatore_IEEE754|NORMALIZER.vhd</ClosedNode>
+         <ClosedNode>/SNC - Behavioral |media|sf_Sommatore_IEEE754|SNC.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>U1 - ABSDIFF - STRUCT (/media/sf_Sommatore_IEEE754/ABSDIFF.vhd)</SelectedItem>
+         <SelectedItem>SNC - Behavioral (/media/sf_Sommatore_IEEE754/SNC.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001db000000020000000000000000000000000200000064ffffffff000000810000000300000002000001db0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>U1 - ABSDIFF - STRUCT (/media/sf_Sommatore_IEEE754/ABSDIFF.vhd)</CurrentItem>
+      <CurrentItem>SNC - Behavioral (/media/sf_Sommatore_IEEE754/SNC.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -53,7 +57,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016d0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -97,7 +101,8 @@
          <ClosedNode>/C2C_TB - behavior |media|sf_prog-reti-logiche|C2C_TB.vhd</ClosedNode>
          <ClosedNode>/CLU_TB - behavior |media|sf_Sommatore_IEEE754|CLU_TB.vhd</ClosedNode>
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZE.vhd</ClosedNode>
-         <ClosedNode>/DENORMALIZED_SUM_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM_TB.vhd</ClosedNode>
+         <ClosedNode>/DENORMALIZED_SUM_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM_TB.vhd/UUT - DENORMALIZED_SUM - Behavioral</ClosedNode>
+         <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U1 - ABSDIFF - STRUCT</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U3 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_Sommatore_IEEE754|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U4 - MUX - Behavioral</ClosedNode>
@@ -110,6 +115,7 @@
          <ClosedNode>/DENORMALIZE_TB - behavior |media|sf_prog-reti-logiche|DENORMALIZE_TB.vhd/UUT - DENORMALIZE - Behavioral/U6 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
          <ClosedNode>/FA_TB - behavior |media|sf_prog-reti-logiche|FA_TB.vhd</ClosedNode>
+         <ClosedNode>/NORMALIZER_TB - behavior |media|sf_Sommatore_IEEE754|NORMALIZER_TB.vhd</ClosedNode>
          <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U3 - RCA - STRUCT</ClosedNode>
          <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U4 - PA - STRUCT</ClosedNode>
          <ClosedNode>/NORMALIZER_TB - behavior |media|sf_prog-reti-logiche|NORMALIZER_TB.vhd/uut - NORMALIZER - Behavioral/U5 - MUX - Behavioral</ClosedNode>
@@ -125,7 +131,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001fe000000020000000000000000000000000200000064ffffffff000000810000000300000002000001fe0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000218000000020000000000000000000000000200000064ffffffff000000810000000300000002000002180000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>DENORMALIZED_SUM_TB - behavior (/media/sf_Sommatore_IEEE754/DENORMALIZED_SUM_TB.vhd)</CurrentItem>
    </ItemView>
@@ -150,13 +156,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ISim Simulator</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000002dc000000010000000100000000000000000000000064ffffffff000000810000000000000001000002dc0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000001e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ISim Simulator</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -240,14 +246,13 @@
       <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000001b1000000f201000000060100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Utilities</SelectedItem>
          <SelectedItem>Design Utilities</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
