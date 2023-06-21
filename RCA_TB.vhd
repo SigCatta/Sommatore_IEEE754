@@ -34,11 +34,11 @@ begin
    UUT: RCA
 			generic map (width => 8)
 			port map (
-          X		=> X,
-          Y 	=> Y,
-          CIN  => CIN,
-          S 	=> S,
-          COUT => COUT
+         X    => X,
+         Y    => Y,
+         CIN  => CIN,
+         S    => S,
+         COUT => COUT
         );
         
    process

@@ -32,7 +32,7 @@ architecture Behavioral of DENORMALIZE is
 	end component;
 	 
 	component C2C is								-- calculate the mantissa's 2's complement if necessary
-		generic(width: integer := 25);		-- needs to have an extra sign bit
+		generic(width: integer := 25);				-- needs to have an extra sign bit
 		port(
 			N:    in  std_logic_vector (width - 1 downto 0);
 			S:    in  std_logic;

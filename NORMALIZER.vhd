@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity NORMALIZER is
     port(
-		X:	  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+    X:	  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
     EXP:  in  std_logic_vector(7 downto 0);
     C:	  in  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
     NEWMANTX: out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
@@ -27,8 +27,8 @@ architecture Behavioral of NORMALIZER is
    
     component PRI_ENC is   -- to determinate how much the mantissa has to be shifted left when the 25th bit is 0
         port(
-            X: in  std_logic_vector(23 downto 0);
-            Y: out std_logic_vector(4 downto 0)
+          X: in  std_logic_vector(23 downto 0);
+          Y: out std_logic_vector(4 downto 0)
         );
     end component;
 
@@ -61,11 +61,11 @@ end component;
       );
 end component;  
 
-signal  NUMB_SHIFT: std_logic_vector(4 downto 0);  -- out of the priority encoder
-signal  MANTLEFT :  std_logic_vector(22 downto 0);  -- mantix output of the left shift
-signal  MANTRIGHT :  std_logic_vector(22 downto 0);  -- manitx output of the right shift
-signal  EXPLEFT:  std_logic_vector(7 downto 0);  -- exp output of the left shift
-signal  EXPRIGHT:  std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
+signal  NUMB_SHIFT : std_logic_vector(4 downto 0);  -- out of the priority encoder
+signal  MANTLEFT   : std_logic_vector(22 downto 0);  -- mantix output of the left shift
+signal  MANTRIGHT  : std_logic_vector(22 downto 0);  -- manitx output of the right shift
+signal  EXPLEFT    : std_logic_vector(7 downto 0);  -- exp output of the left shift
+signal  EXPRIGHT   : std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
 
 begin
     U1: PRI_ENC  -- determinate how much i have to shift left
@@ -83,19 +83,19 @@ begin
     
     U3: RCA   --subtract to the exponent n when i have shifted left 
       port map(
-        X => EXP(7 downto 0),
-        Y => "111" & not( NUMB_SHIFT(4 downto 0)),
+        X   => EXP(7 downto 0),
+        Y   => "111" & not( NUMB_SHIFT(4 downto 0)),
         CIN => '1',
-        S => EXPLEFT(7 downto 0)
+        S   => EXPLEFT(7 downto 0)
       );
     
     MANTRIGHT <= X(23 downto 1);
     
     U4: PA  -- to add 1 at the exponent when the shift has to be right
       port map(
-        X => EXP(7 downto 0),
+        X   => EXP(7 downto 0),
         CIN => '1',
-        S => EXPRIGHT(7 downto 0)
+        S   => EXPRIGHT(7 downto 0)
       );
     
     U5: MUX   -- choose the mantissa depending on 25th bit

@@ -4,13 +4,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity SNC is
 	port(
-		PINF: in std_logic;
-		NINF: in std_logic;
-		NAN:  in std_logic;
-		SIGN: in std_logic;
-		EXP:  in std_logic_vector(7 downto 0);
-		MAN:  in std_logic_vector(22 downto 0);
-		Z:    out std_logic_vector(31 downto 0)
+		PINF : in std_logic;
+		NINF : in std_logic;
+		NAN  : in std_logic;
+		SIGN : in std_logic;
+		EXP  : in std_logic_vector(7 downto 0);
+		MAN  : in std_logic_vector(22 downto 0);
+		Z    : out std_logic_vector(31 downto 0)
 	);
 end SNC;
 
@@ -19,16 +19,16 @@ architecture Behavioral of SNC is
 	component MUX is
 		generic(width: integer);
       port( 
-          X    : in  std_logic_vector (width - 1 downto 0);
-          Y    : in  std_logic_vector (width - 1 downto 0);
-          S    : in  std_logic;
-          Z    : out std_logic_vector (width - 1 downto 0)
+          X : in  std_logic_vector (width - 1 downto 0);
+          Y : in  std_logic_vector (width - 1 downto 0);
+          S : in  std_logic;
+          Z : out std_logic_vector (width - 1 downto 0)
       );
    end component;
 	
-	signal EXPALL1: std_logic;
-	signal SPECIAL: std_logic;
-	signal MANTISSA: std_logic_vector(22 downto 0);
+	signal EXPALL1  : std_logic;
+	signal SPECIAL  : std_logic;
+	signal MANTISSA : std_logic_vector(22 downto 0);
 
 begin
 

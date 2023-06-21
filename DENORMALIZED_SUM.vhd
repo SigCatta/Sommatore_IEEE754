@@ -34,17 +34,17 @@ architecture Behavioral of DENORMALIZED_SUM is
 		);
 	end component;
 	
-	signal S: std_logic_vector(25 downto 0);
-	signal COUT : std_logic;
+	signal S:    std_logic_vector(25 downto 0);
+	signal COUT: std_logic;
 
 begin
 
-	U1: RCA
+	U1: RCA						-- each number has 1 sign bit, 1 extra bit for overflows, 1 extra 1 (not shown in mantissa), 23 mantissa bits
 		port map(
-			X   => X(24) & X,
-			Y   => Y(24) & Y,
-			CIN => '0',
-			S   => S,
+			X    => X(24) & X,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
+			Y    => Y(24) & Y,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
+			CIN  => '0',
+			S    => S,
 			COUT => COUT
 		);
 		

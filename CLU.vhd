@@ -3,12 +3,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity CLU is
 	port(
-		X:		in	 std_logic_vector(31 downto 0);
-		Y:		in	 std_logic_vector(31 downto 0);
-		SUB:	in	 std_logic;
-		PINF: out std_logic;		-- 1 if the result is positive infinity
-		NINF: out std_logic;		-- 1 if the result is negative infinity
-		NAN:	out std_logic
+		X:      in	 std_logic_vector(31 downto 0);
+		Y:      in	 std_logic_vector(31 downto 0);
+		SUB:    in	 std_logic;
+		PINF:   out std_logic;		-- 1 if the result is positive infinity
+		NINF:   out std_logic;		-- 1 if the result is negative infinity
+		NAN:    out std_logic
 	);
 end CLU;
 
@@ -19,10 +19,10 @@ architecture Behavioral of CLU is
 	signal XNAN:    std_logic;
 	signal XINF:    std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, X is not inf
 	
-	signal YINF:    std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, Y is not inf
-	signal YNAN:    std_logic;
 	signal YEXP255: std_logic;
 	signal YMANN0:  std_logic;		-- 1 if the y's mantissa is not 0
+	signal YNAN:    std_logic;
+	signal YINF:    std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, Y is not inf
 begin
 
 	XEXP255 <= ((X(30) and X(29)) and (X(28) and X(27))) and ((X(26) and X(25)) and (X(24) and X(23)));
@@ -34,10 +34,10 @@ begin
 	XINF <= X(31) & (XEXP255 and (not XMANN0));
 	YINF <= (Y(31) xor SUB) & (YEXP255 and (not YMANN0));
 	
-		-- result is +inf if the operands are: inf + inf, inf + n or n + inf 		~ result optimized with karnaugh map
+	-- result is +inf if the operands are: inf + inf, inf + n or n + inf 		~ result optimized with karnaugh map
 	PINF <= (( (not XINF(1)) and XINF(0) ) and ( (not YINF(1)) or (not YINF(0)) )) or (( (not YINF(1)) and YINF(0) ) and ( (not XINF(1)) or (not XINF(0)) ));
 	
-		-- result is -inf if the operands are: -inf -inf, -inf +n or n -inf			~ result optimized with karnaugh map
+	-- result is -inf if the operands are: -inf -inf, -inf +n or n -inf			~ result optimized with karnaugh map
 	NINF <= (( XINF(1) and XINF(0) ) and ( YINF(1) or (not YINF(0)) )) or ((  YINF(1) and YINF(0) ) and ( XINF(1) or (not XINF(0)) ));
 		
 	-- set NAN
