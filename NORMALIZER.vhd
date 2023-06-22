@@ -28,7 +28,7 @@ architecture Behavioral of NORMALIZER is
     component PRI_ENC is   -- to determinate how much the mantissa has to be shifted left when the 25th bit is 0
         port(
             X: in  std_logic_vector(23 downto 0);
-            Y: out std_logic_vector(4 downto 0)
+            Y: out std_logic_vector(7 downto 0)
         );
     end component;
 
@@ -67,7 +67,8 @@ signal  MANTLEFTINT :  std_logic_vector(22 downto 0);  -- mantix output of the l
 signal  MANTRIGHT :  std_logic_vector(22 downto 0);  -- manitx output of the right shift
 signal  EXPLEFT:  std_logic_vector(7 downto 0);  -- exp output of the left shift
 signal  EXPRIGHT:  std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
-signal  ZERO: std_logic -- to know if the results is approx to zero
+signal  ZERO: std_logic; -- to know if the results is approx to zero
+
 
 begin
     U1: PRI_ENC  -- determinate how much i have to shift left
@@ -85,11 +86,11 @@ begin
     
     U3: RCA   --subtract to the exponent n when i have shifted left, if the result of the subtraction is negative the mantix is all0
       port map(
-        X => '0'& EXP(7 downto 0),
-        Y => '1' & not( NUMB_SHIFT(7 downto 0)),
+        X => '0' & EXP(7 downto 0),
+        Y => '1' & not(NUMB_SHIFT(7 downto 0)),
         CIN => '1',
-        S => EXPLEFT(7 downto 0),
-        COUT => ZERO
+        S(7 downto 0) => EXPLEFT(7 downto 0),
+		  S(8) => ZERO
       );
     
     MANTRIGHT <= X(23 downto 1);
