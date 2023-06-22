@@ -31,13 +31,13 @@
          <ClosedNode>/DENORMALIZE - Behavioral |media|sf_prog-reti-logiche|DENORMALIZE.vhd/U6 - C2C - STRUCT</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>U2 - SHIFT_RIGHT_V2 - Behavioral (/media/sf_prog-reti-logiche/SHIFT_RIGHT_V2.vhd)</SelectedItem>
+         <SelectedItem>NORMALIZER - Behavioral (/media/sf_prog-reti-logiche/NORMALIZER.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ce000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ce0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>U2 - SHIFT_RIGHT_V2 - Behavioral (/media/sf_prog-reti-logiche/SHIFT_RIGHT_V2.vhd)</CurrentItem>
+      <CurrentItem>NORMALIZER - Behavioral (/media/sf_prog-reti-logiche/NORMALIZER.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -50,9 +50,9 @@
       <SelectedItems>
          <SelectedItem>Check Syntax</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001eb000000010000000100000000000000000000000064ffffffff000000810000000000000001000001eb0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001dc000000010000000100000000000000000000000064ffffffff000000810000000000000001000001dc0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Check Syntax</CurrentItem>
    </ItemView>
@@ -121,7 +121,7 @@
       <SelectedItems>
          <SelectedItem>NORMALIZER_TB - behavior (/media/sf_prog-reti-logiche/NORMALIZER_TB.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >8</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e20000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -169,13 +169,13 @@
          <ClosedNode>/SHIFT_RHIGT_V2_TB - behavior |media|sf_prog-reti-logiche|SHIFT_RIGHT_V2TB.vhd/uut - SHIFT_RHIGT_V2 - Structure</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>DENORMALIZE_TB - behavior (/media/sf_Sommatore_IEEE754/DENORMALIZE_TB.vhd)</SelectedItem>
+         <SelectedItem>PRI_ENC_TB - behavior (/media/sf_prog-reti-logiche/PRI_ENC_TB.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b7000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b70000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>DENORMALIZE_TB - behavior (/media/sf_Sommatore_IEEE754/DENORMALIZE_TB.vhd)</CurrentItem>
+      <CurrentItem>PRI_ENC_TB - behavior (/media/sf_prog-reti-logiche/PRI_ENC_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -183,26 +183,26 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016f0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001eb000000010000000100000000000000000000000064ffffffff000000810000000000000001000001eb0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ISim Simulator</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016f0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001eb000000010000000100000000000000000000000064ffffffff000000810000000000000001000001eb0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ISim Simulator</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="PostTransSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>

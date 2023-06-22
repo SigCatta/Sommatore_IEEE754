@@ -12,14 +12,14 @@ ARCHITECTURE behavior OF PRI_ENC_TB IS
     COMPONENT PRI_ENC
     PORT(
       X: in  std_logic_vector(23 downto 0);
-      Y: out std_logic_vector(4 downto 0)
+      Y: out std_logic_vector(7 downto 0)
       );
     END COMPONENT;
 
      --Inputs
      signal X   : std_logic_vector(23 downto 0);
      --Outputs
-     signal Y   : std_logic_vector(4 downto 0);
+     signal Y   : std_logic_vector(7 downto 0);
     
 BEGIN
  
@@ -35,18 +35,18 @@ BEGIN
 
    X <= "010101010101010101010101"; 
 
-   -- output should be 00001
+   -- output should be 00000001
       
    wait for 100 ns;
       
    X <= "000111010110111000010010"; 
 
-   -- output should be 00011
+   -- output should be 00000011
    wait for 40 ns;
 
    X <= "000000000000000000101011"; 
 
-   -- output should be 10010
+   -- output should be 00010010
    wait for 40 ns;
    end process;
 
