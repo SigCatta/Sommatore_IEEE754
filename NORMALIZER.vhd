@@ -27,8 +27,8 @@ architecture Behavioral of NORMALIZER is
    
     component PRI_ENC is   -- to determinate how much the mantissa has to be shifted left when the 25th bit is 0
         port(
-          X: in  std_logic_vector(23 downto 0);
-          Y: out std_logic_vector(4 downto 0)
+            X: in  std_logic_vector(23 downto 0);
+            Y: out std_logic_vector(7 downto 0)
         );
     end component;
 
@@ -51,7 +51,7 @@ end component;
 end component;  
 
     component RCA is  -- to subtract a number to the exponent when 25th bit is 0
-      generic(width: integer := 8);
+      generic(width: integer := 9);
       port(
           X    : in  std_logic_vector (width - 1 downto 0);
           Y    : in  std_logic_vector (width - 1 downto 0);
@@ -61,32 +61,36 @@ end component;
       );
 end component;  
 
-signal  NUMB_SHIFT : std_logic_vector(4 downto 0);  -- out of the priority encoder
-signal  MANTLEFT   : std_logic_vector(22 downto 0);  -- mantix output of the left shift
-signal  MANTRIGHT  : std_logic_vector(22 downto 0);  -- manitx output of the right shift
-signal  EXPLEFT    : std_logic_vector(7 downto 0);  -- exp output of the left shift
-signal  EXPRIGHT   : std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
+signal  NUMB_SHIFT: std_logic_vector(7 downto 0);  -- out of the priority encoder
+signal  MANTLEFT :  std_logic_vector(22 downto 0);  -- mantix output of the left shift
+signal  MANTLEFTINT :  std_logic_vector(22 downto 0);  -- mantix output of the left shift intermedie
+signal  MANTRIGHT :  std_logic_vector(22 downto 0);  -- manitx output of the right shift
+signal  EXPLEFT:  std_logic_vector(7 downto 0);  -- exp output of the left shift
+signal  EXPRIGHT:  std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
+signal  ZERO: std_logic; -- to know if the results is approx to zero
+
 
 begin
     U1: PRI_ENC  -- determinate how much i have to shift left
       port map(
         X => X(23 downto 0),
-        Y => NUMB_SHIFT(4 downto 0)
+        Y => NUMB_SHIFT(7 downto 0)
       );
 
     U2: SHIFTER_LEFT  -- shift the mantissa left of n bit  
       port map(
         X => X(23 downto 0),
-        S => "000" & NUMB_SHIFT(4 downto 0),
-        Y => MANTLEFT(22 downto 0)
+        S => NUMB_SHIFT(7 downto 0),
+        Y => MANTLEFTINT(22 downto 0)
       );  
     
-    U3: RCA   --subtract to the exponent n when i have shifted left 
+    U3: RCA   --subtract to the exponent n when i have shifted left, if the result of the subtraction is negative the mantix is all0
       port map(
-        X   => EXP(7 downto 0),
-        Y   => "111" & not( NUMB_SHIFT(4 downto 0)),
+        X => '0' & EXP(7 downto 0),
+        Y => '1' & not(NUMB_SHIFT(7 downto 0)),
         CIN => '1',
-        S   => EXPLEFT(7 downto 0)
+        S(7 downto 0) => EXPLEFT(7 downto 0),
+		  S(8) => ZERO
       );
     
     MANTRIGHT <= X(23 downto 1);
@@ -114,7 +118,16 @@ begin
         Y => EXPRIGHT(7 downto 0),
         S => C,
         Z => NEWEXP(7 downto 0)
-      );    
+      );  
+      
+    U7: MUX  -- to know if the mantleft is all0s or not
+      generic map(width => 23)
+      port map(
+        X => MANTLEFTINT(22 downto 0),
+        Y => "00000000000000000000000",
+        S => ZERO,
+        Z => MANTLEFT(22 downto 0)   
+      );  
      
 
 end Behavioral;
