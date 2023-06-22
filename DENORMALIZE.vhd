@@ -8,6 +8,7 @@ entity DENORMALIZE is
 		SUB:	  in	 std_logic;
 		DNORMX: out  std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
 		DNORMY: out  std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
+		EXP:    out  std_logic_vector(7 downto 0); -- the bigger expontnt
 		C:		  inout std_logic
 	);
 end DENORMALIZE;
@@ -96,7 +97,7 @@ begin
 		
 	U4: MUX						-- gives the larger number's mantissa to a conditonal 2's complement (C2C) module
 		port map(
-			X => '1' & X(22 downto 0),			-- y > x (s = 1) ~ 
+			X => '1' & X(22 downto 0),			-- y > x (s = 1)
 			Y => '1' & Y(22 downto 0),			-- x > y (s = 0)
 			S => C,
 			Z => M2
@@ -116,7 +117,7 @@ begin
 			Z => DNORMY
 		);
 		
-	U7: MUX2						-- selects the correct sign for U5
+	U7: MUX2						-- selects the correct sign for U5, the smaller number
 		port map(
 			A => Y(31) xor SUB,							-- C = 0, get sign for Y
 			B => X(31),										-- C = 1, get sign for X
@@ -124,12 +125,20 @@ begin
 			Z => S1
 		);
 	
-	U8: MUX2						-- selects the correct sign for U6
+	U8: MUX2						-- selects the correct sign for U6, the bigger number
 		port map(
 			A => X(31),										-- C = 0, get sign for X
 			B => Y(31) xor SUB,							-- C = 1, get sign for Y
 			S => C,
 			Z => S2
+		);
+	U9: MUX						-- selects the bigger exponent
+		generic map(width => 8)
+		port map(
+			X => X(30 downto 23),
+			Y => Y(30 downto 23),
+			S => C,
+			Z => EXP
 		);
 
 end Behavioral;
