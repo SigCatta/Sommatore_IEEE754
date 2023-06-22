@@ -61,13 +61,15 @@ end component;
       );
 end component;  
 
-signal  NUMB_SHIFT: std_logic_vector(7 downto 0);  -- out of the priority encoder
-signal  MANTLEFT :  std_logic_vector(22 downto 0);  -- mantix output of the left shift
-signal  MANTLEFTINT :  std_logic_vector(22 downto 0);  -- mantix output of the left shift intermedie
-signal  MANTRIGHT :  std_logic_vector(22 downto 0);  -- manitx output of the right shift
-signal  EXPLEFT:  std_logic_vector(7 downto 0);  -- exp output of the left shift
-signal  EXPRIGHT:  std_logic_vector(7 downto 0);  -- exp output of the right shift  (exp+1)
-signal  ZERO: std_logic; -- to know if the results is approx to zero
+signal NUMB_SHIFT  : std_logic_vector(7 downto 0);   -- out of the priority encoder
+signal MANTLEFT    : std_logic_vector(22 downto 0);  -- mantix output of the left shift
+signal MANTLEFTINT : std_logic_vector(22 downto 0);  -- mantix output of the left shift intermedie
+signal MANTRIGHT   : std_logic_vector(22 downto 0);  -- manitx output of the right shift
+signal EXPLEFT     : std_logic_vector(7 downto 0);   -- exp output of the left shift
+signal EXPRIGHT    : std_logic_vector(7 downto 0);   -- exp output of the right shift  (exp+1)
+signal EXPRES      : std_logic_vector(7 downto 0);   -- the correct exponent between EXPRIGHT and EXPLEFT
+signal ZERO        : std_logic; -- to know if the results is approx to zero
+signal SHIFTALL1   : std_logic; -- indicates if the result of the sum was 0
 
 
 begin
@@ -92,6 +94,9 @@ begin
         S(7 downto 0) => EXPLEFT(7 downto 0),
 		  S(8) => ZERO
       );
+		
+	  SHIFTALL1 <= ((NUMB_SHIFT(0) and NUMB_SHIFT(1)) and (NUMB_SHIFT(2) and NUMB_SHIFT(3))) and ((NUMB_SHIFT(4) and NUMB_SHIFT(5)) and (NUMB_SHIFT(6) and NUMB_SHIFT(7)));
+
     
     MANTRIGHT <= X(23 downto 1);
     
@@ -117,7 +122,7 @@ begin
         X => EXPLEFT(7 downto 0),
         Y => EXPRIGHT(7 downto 0),
         S => C,
-        Z => NEWEXP(7 downto 0)
+        Z => EXPRES(7 downto 0)
       );  
       
     U7: MUX  -- to know if the mantleft is all0s or not
@@ -128,7 +133,17 @@ begin
         S => ZERO,
         Z => MANTLEFT(22 downto 0)   
       );  
+		
+		
+    U8: MUX   -- the exponent has to be zero if the result of the sum between the mantissas was zero
+      generic map(width => 8)
+      port map(
+        X => EXPRES,
+        Y => "00000000",
+        S => SHIFTALL1,
+        Z => NEWEXP
+      );  
+      
      
-
 end Behavioral;
 
