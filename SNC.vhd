@@ -53,7 +53,7 @@ begin
 		generic map(width => 23)
 		port map(
 			X => MANTISSA,
-			Y => NAN & "0000000000000000000000",
+			Y => "0000000000000000000000" & NAN,
 			S => SPECIAL,
 			Z => Z(22 downto 0)
 		);
