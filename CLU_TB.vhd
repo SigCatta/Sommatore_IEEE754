@@ -29,27 +29,29 @@ architecture behavior of CLU_TB is
    signal PINF : std_logic;
    signal NINF : std_logic;
    signal NAN  : std_logic;
+	
 
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: CLU port map (
-					X	  => X,
-					Y	  => Y,
-					SUB  => SUB,
-					PINF => PINF,
-					NINF => NINF,
-					NAN  => NAN
-				);
- 
+	UUT: CLU
+	port map (
+		X	  => X,
+		Y	  => Y,
+		SUB  => SUB,
+		PINF => PINF,
+		NINF => NINF,
+		NAN  => NAN
+	);
 
    -- Stimulus process
    process
    begin
-	
+		
 		X <= "00000000000000000000000000000000";
 		Y <= "00000000000000000000000000000000";
 		SUB <= '0';
+		
 		wait for 100 ns;
 		
 		X <= "01111111100000000000000000000000";
@@ -57,35 +59,35 @@ begin
 		SUB <= '0';
 		-- PINF 1, NINF 0, NAN 0s
 		
-		wait for 20 ns;
+		wait for 40 ns;
 		
 		X <= "01111111100000000000000000000000";
 		Y <= "11111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 0, NAN 1
 		
-		wait for 20 ns;
+		wait for 40 ns;
 		
 		X <= "01111111100000000000000000000000";
 		Y <= "01111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 1, NINF 0, NAN 0
 		
-		wait for 20 ns;
+		wait for 40 ns;
 		
 		X <= "00000000011111111100000000000000"; -- positive number
 		Y <= "11111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 1, NAN 0
 		
-		wait for 20 ns;
+		wait for 40 ns;
 		
 		X <= "01110111100000000000110000000000";
 		Y <= "11111111110000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 0, NAN 1
 		
-		wait for 20 ns;
+		wait for 40 ns;
 		
 		X <= "11111111100000000000000000000000";
 		Y <= "11001001100101101011010000111000";

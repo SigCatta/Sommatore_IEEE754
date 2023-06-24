@@ -57,30 +57,16 @@ architecture Behavioral of SOMMATORE_NOPIPELINE is
 	signal M    : std_logic_vector(23 downto 0);
 	signal SIGN : std_logic;
 	signal INCR : std_logic;
-	
-	
-	component NORMALIZER is
-		port(
-			X        : in  std_logic_vector(23 downto 0);
-			EXP      : in  std_logic_vector(7 downto 0);
-			C        : in  std_logic;
-			NEWMANTX : out std_logic_vector(22 downto 0);
-			NEWEXP   : out std_logic_vector(7 downto 0)
-		);
-	end component;
-	
-	signal NEWEXP    : std_logic_vector(7 downto 0);
-	signal NEWMANTIX : std_logic_vector(22 downto 0);
 
-	
-	component SNC is
+	component NORMALIZE is
 		port(
+			SIGN : in std_logic;
+			EXP  : in std_logic_vector(7 downto 0);
+			MAN  : in std_logic_vector(23 downto 0);
+			INCR : in std_logic;
 			PINF : in std_logic;
 			NINF : in std_logic;
 			NAN  : in std_logic;
-			SIGN : in std_logic;
-			EXP  : in std_logic_vector(7 downto 0);
-			MAN  : in std_logic_vector(22 downto 0);
 			Z    : out std_logic_vector(31 downto 0)
 		);
 	end component;
@@ -116,24 +102,17 @@ begin
 			INCR => INCR
 		);
 		
-	U4: NORMALIZER
-		port map(
-			X         => M,
-			EXP       => EXP,
-			C         => INCR,
-			NEWMANTX => NEWMANTIX,
-			NEWEXP    => NEWEXP
-		);
 		
-	U5: SNC
+	U4: NORMALIZE
 		port map(
+			SIGN => SIGN,
+			EXP  => EXP,
+			MAN  => M,
+			INCR => INCR,
 			PINF => PINF,
 			NINF => NINF,
 			NAN  => NAN,
-			SIGN => SIGN,
-			EXP  => NEWEXP,
-			MAN  => NEWMANTIX,
-			Z => Z
+			Z    => Z
 		);
 
 end Behavioral;

@@ -16,7 +16,7 @@ end NORMALIZER;
 
 architecture Behavioral of NORMALIZER is
   component MUX is -- check if the 25th bit is 1 or 0 to shift right or left
-     generic( width : integer:= 5);
+     generic(width : integer:= 5);
      port( 
           X    : in  std_logic_vector (width - 1 downto 0);
           Y    : in  std_logic_vector (width - 1 downto 0);
@@ -95,7 +95,7 @@ begin
 		  S(8) => ZERO
       );
 		
-	  SHIFTALL1 <= ((NUMB_SHIFT(0) and NUMB_SHIFT(1)) and (NUMB_SHIFT(2) and NUMB_SHIFT(3))) and ((NUMB_SHIFT(4) and NUMB_SHIFT(5)) and (NUMB_SHIFT(6) and NUMB_SHIFT(7)));
+	 SHIFTALL1 <= ((NUMB_SHIFT(0) and NUMB_SHIFT(1)) and (NUMB_SHIFT(2) and NUMB_SHIFT(3))) and ((NUMB_SHIFT(4) and NUMB_SHIFT(5)) and (NUMB_SHIFT(6) and NUMB_SHIFT(7)));
 
     
     MANTRIGHT <= X(23 downto 1);

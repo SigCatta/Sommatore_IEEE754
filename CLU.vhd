@@ -3,26 +3,27 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity CLU is
 	port(
-		X:      in	 std_logic_vector(31 downto 0);
-		Y:      in	 std_logic_vector(31 downto 0);
-		SUB:    in	 std_logic;
-		PINF:   out std_logic;		-- 1 if the result is positive infinity
-		NINF:   out std_logic;		-- 1 if the result is negative infinity
-		NAN:    out std_logic
+		X    : in  std_logic_vector(31 downto 0);
+		Y    : in  std_logic_vector(31 downto 0);
+		SUB  : in  std_logic;
+		PINF : out std_logic;		-- 1 if the result is positive infinity
+		NINF : out std_logic;		-- 1 if the result is negative infinity
+		NAN  : out std_logic
 	);
 end CLU;
 
 architecture Behavioral of CLU is
 
-	signal XEXP255: std_logic;
-	signal XMANN0:  std_logic;		-- 1 if the x's mantissa is not 0
-	signal XNAN:    std_logic;
-	signal XINF:    std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, X is not inf
+	signal XEXP255 : std_logic;
+	signal XMANN0  : std_logic;		-- 1 if the x's mantissa is not 0
+	signal XNAN    : std_logic;
+	signal XINF    : std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, X is not inf
 	
-	signal YEXP255: std_logic;
-	signal YMANN0:  std_logic;		-- 1 if the y's mantissa is not 0
-	signal YNAN:    std_logic;
-	signal YINF:    std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, Y is not inf
+	signal YEXP255 : std_logic;
+	signal YMANN0  : std_logic;		-- 1 if the y's mantissa is not 0
+	signal YNAN    : std_logic;
+	signal YINF    : std_logic_vector(1 downto 0);		-- 01 if +inf, 11 if -inf ~ if the second bit is 0, Y is not inf
+	
 begin
 
 	XEXP255 <= ((X(30) and X(29)) and (X(28) and X(27))) and ((X(26) and X(25)) and (X(24) and X(23)));
