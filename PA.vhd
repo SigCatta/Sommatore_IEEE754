@@ -15,9 +15,9 @@ architecture STRUCT of PA is
 
     component HA is 
     port(
-		X	 : in  std_logic;
-		CIN	 : in  std_logic;
-		S	 : out std_logic;
+		X    : in  std_logic;
+		CIN  : in  std_logic;
+		S    : out std_logic;
 		COUT : out std_logic
     );
     end component;
