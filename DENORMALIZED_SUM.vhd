@@ -43,7 +43,7 @@ begin
 		port map(
 			X    => X(24) & X,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
 			Y    => Y(24) & Y,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
-			CIN  => '0',
+			CIN  => X(24),			-- if X is negative, it need to be converted to the 2's complement
 			S    => S,
 			COUT => COUT
 		);

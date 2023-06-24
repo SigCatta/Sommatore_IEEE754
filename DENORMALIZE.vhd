@@ -103,12 +103,14 @@ begin
 			Z => M2
 		);
 		
-	U5: C2C							-- converts the number coming from the shifter (smaller number) to its 2's complement if necessary
+	U5: MUX						-- converts X to it's 1's complement if necessary
+		generic map(width => 25)
 		port map(
-			N => '0' & SM1,
+			X => '0' & SM1,
+			Y => '1' & (not SM1),
 			S => S1,
 			Z => DNORMX
-		);
+		);		
 
 	U6: C2C							-- converts the larger number to its 2's complement if necessary 
 		port map(
