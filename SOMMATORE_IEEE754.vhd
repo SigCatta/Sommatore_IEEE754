@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity SOMMATORE_NOPIPELINE is
+entity SOMMATORE_IEEE754 is
 	port(
 		X   : in  std_logic_vector(31 downto 0);
 		Y   : in  std_logic_vector(31 downto 0);
@@ -11,9 +11,9 @@ entity SOMMATORE_NOPIPELINE is
 		CLK : in std_logic;
 		RST : in std_logic
 	);
-end SOMMATORE_NOPIPELINE;
+end SOMMATORE_IEEE754;
 
-architecture Behavioral of SOMMATORE_NOPIPELINE is
+architecture Behavioral of SOMMATORE_IEEE754 is
 
 	signal rIN_X   : std_logic_vector(31 downto 0);
 	signal rIN_Y   : std_logic_vector(31 downto 0);

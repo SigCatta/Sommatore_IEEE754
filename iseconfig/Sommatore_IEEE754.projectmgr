@@ -36,6 +36,9 @@
          <ClosedNode>/DENORMALIZED_SUM - Behavioral |media|sf_Sommatore_IEEE754|DENORMALIZED_SUM.vhd/U2 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/NORMALIZER - Behavioral |media|sf_Sommatore_IEEE754|NORMALIZER.vhd</ClosedNode>
          <ClosedNode>/SNC - Behavioral |media|sf_Sommatore_IEEE754|SNC.vhd</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U1 - DENORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
@@ -48,13 +51,13 @@
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U5 - SNC - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>SOMMATORE_NOPIPELINE - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE.vhd)</SelectedItem>
+         <SelectedItem>SOMMATORE_IEEE754 - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021f0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>SOMMATORE_NOPIPELINE - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE.vhd)</CurrentItem>
+      <CurrentItem>SOMMATORE_IEEE754 - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -69,13 +72,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Summary/Reports</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000151000000010000000100000000000000000000000064ffffffff000000810000000000000001000001510000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Summary/Reports</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -145,6 +148,8 @@
          <ClosedNode>/RCA_TB - behavior |media|sf_prog-reti-logiche|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/SHIFTER_LEFT_TB - behavior |media|sf_Sommatore_IEEE754|SHIFTER_LEFT_TB.vhd</ClosedNode>
          <ClosedNode>/SHIFT_RIGHT_V2_TB - behavior |media|sf_Sommatore_IEEE754|SHIFT_RIGHT_V2TB.vhd</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U1 - DENORMALIZE - Behavioral</ClosedNode>
@@ -154,13 +159,13 @@
          <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U5 - SNC - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>SOMMATORE_NOPIPELINE_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB.vhd)</SelectedItem>
+         <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000232000000020000000000000000000000000200000064ffffffff000000810000000300000002000002320000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000200000000020000000000000000000000000200000064ffffffff000000810000000300000002000002000000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>SOMMATORE_NOPIPELINE_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB.vhd)</CurrentItem>
+      <CurrentItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -172,7 +177,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000160000000010000000100000000000000000000000064ffffffff000000810000000000000001000001600000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
       <CurrentItem/>
@@ -186,7 +191,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000160000000010000000100000000000000000000000064ffffffff000000810000000000000001000001600000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
@@ -206,13 +211,13 @@
          <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>SOMMATORE_NOPIPELINE_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB.vhd)</SelectedItem>
+         <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000232000000020000000000000000000000000200000064ffffffff000000810000000300000002000002320000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000024c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000024c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>SOMMATORE_NOPIPELINE_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB.vhd)</CurrentItem>
+      <CurrentItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="PostRouteSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -224,7 +229,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016f0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -233,13 +238,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Post-Place &amp; Route Model</SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000160000000010000000100000000000000000000000064ffffffff000000810000000000000001000001600000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Post-Place &amp; Route Model</CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="PostTransSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -272,7 +277,7 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
-   <SourceProcessView>000000ff0000000000000002000000e6000000b501000000060100000002</SourceProcessView>
+   <SourceProcessView>000000ff00000000000000020000019d000000cf01000000060100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -284,7 +289,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001dc000000010000000100000000000000000000000064ffffffff000000810000000000000001000001dc0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Design Utilities</CurrentItem>
       <CurrentItem>Design Utilities</CurrentItem>
