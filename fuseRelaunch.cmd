@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB_isim_beh.exe" -prj "/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB_beh.prj" "SOMMATORE_NOPIPELINE_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB_isim_par.exe" -prj "/media/sf_Sommatore_IEEE754/SOMMATORE_NOPIPELINE_TB_par.prj" "work.SOMMATORE_NOPIPELINE_TB" 
