@@ -37,7 +37,17 @@
          <ClosedNode>/NORMALIZER - Behavioral |media|sf_Sommatore_IEEE754|NORMALIZER.vhd</ClosedNode>
          <ClosedNode>/SNC - Behavioral |media|sf_Sommatore_IEEE754|SNC.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U1 - ABSDIFF - STRUCT/U1 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U1 - ABSDIFF - STRUCT/U2 - PA - STRUCT</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U1 - ABSDIFF - STRUCT/U3 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U3 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U4 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U5 - MUX - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U6 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U1 - DENORMALIZE - Behavioral/U9 - MUX - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral/U1 - RCA - STRUCT</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral/U2 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U1 - DENORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
@@ -84,14 +94,12 @@
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem>PRI_ENC_TB.vhd</SelectedItem>
-      </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000036e000000040101000100000000000000000000000064ffffffff0000008100000000000000040000006c00000001000000000000005d0000000100000000000000840000000100000000000002210000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000036e000000040101000100000000000000000000000064ffffffff0000008100000000000000040000009500000001000000000000005d0000000100000000000000840000000100000000000001f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>PRI_ENC_TB.vhd</CurrentItem>
+      <CurrentItem>ABSDIFF.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -108,8 +116,6 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/ABSDIFF - STRUCT |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|ABSDIFF.vhd</ClosedNode>
-         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd</ClosedNode>
-         <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT</ClosedNode>
          <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT/U1 - RCA - STRUCT</ClosedNode>
          <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT/U2 - PA - STRUCT</ClosedNode>
          <ClosedNode>/ABSDIFF_TB - behavior |media|sf_Sommatore_IEEE754|ABSDIFF_TB.vhd/UUT - ABSDIFF - STRUCT/U3 - MUX - Behavioral</ClosedNode>
@@ -191,7 +197,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000160000000010000000100000000000000000000000064ffffffff000000810000000000000001000001600000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
@@ -213,7 +219,7 @@
       <SelectedItems>
          <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000024c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000024c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -238,13 +244,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>ISim Simulator</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001d9000000010000000100000000000000000000000064ffffffff000000810000000000000001000001d90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000160000000010000000100000000000000000000000064ffffffff000000810000000000000001000001600000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>ISim Simulator</CurrentItem>
    </ItemView>
    <ItemView engineview="PostTransSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -277,7 +283,7 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
-   <SourceProcessView>000000ff00000000000000020000019d000000cf01000000060100000002</SourceProcessView>
+   <SourceProcessView>000000ff000000000000000200000162000000b301000000060100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
