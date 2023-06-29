@@ -63,13 +63,20 @@ begin
 
 	wait for 76 ns;
 		RST <= '0';
--- testing subtraction and commutative propriety
+-- ordinary numbers (no special inputs or outputs)
 	
 		X   <= "01000100101111100011011110101110"; -- 1521.739990234375
 		Y   <= "01000100101001101010010011001101"; -- 1333.1500244140625
 		SUB <= '0';
 		
 		-- output should be 01000101001100100110111000111110 (2854.89013671875) ~ 1160932926
+
+-- boundaries (superior and inferior)
+	-- zero
+		wait for 30 ns;
+			X <= "00000000101101100000001010000001"; -- 1.67149585331 * 10^-38
+			Y <= "00000000101101100000001010000000"; -- 1.67149571318 * 10^-38
+			SUB <= '1';
 
 -- special numbers
 	-- infinity
