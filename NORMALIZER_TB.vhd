@@ -63,7 +63,19 @@ process
       
        -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
       wait for 20 ns;
+      X <= "000000000000000000000000";
+      EXP <= "01010100";
+      C <= '0';
+      
+       -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00000000
+      wait for 20 ns;
+
+      X <= "000000000000000000000011";
+      EXP <= "01010100";
+      C <= '0';
+      
+       -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
       wait;
-   end process;
+   end process;	
 
 END;

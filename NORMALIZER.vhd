@@ -6,11 +6,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity NORMALIZER is
     port(
-    X:	  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
-    EXP:  in  std_logic_vector(7 downto 0);
-    C:	  in  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
-    NEWMANTX: out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
-    NEWEXP: out  std_logic_vector(7 downto 0) -- new exponent depending on the shift
+    X       :	 in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+    EXP     :  in  std_logic_vector(7 downto 0);
+    C       :	 in  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
+    NEWMANTX:  out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
+    NEWEXP  :  out  std_logic_vector(7 downto 0) -- new exponent depending on the shift
 	);
 end NORMALIZER;
 
@@ -24,21 +24,6 @@ architecture Behavioral of NORMALIZER is
           Z    : out std_logic_vector (width - 1 downto 0)
       );
    end component;
-   
-    component PRI_ENC is   -- to determinate how much the mantissa has to be shifted left when the 25th bit is 0
-        port(
-            X: in  std_logic_vector(23 downto 0);
-            Y: out std_logic_vector(7 downto 0)
-        );
-    end component;
-
-    component SHIFTER_LEFT is	-- when 25th bit is 0 and has to be shifted left			
-    port(
-      X: in  std_logic_vector(23 downto 0);
-      S: in  std_logic_vector(7 downto 0);
-      Y: out std_logic_vector(22 downto 0)
-    );
-end component;
     
     component PA is  -- to add 1 at the exponent when the 25th bit is 1
     generic(width : integer := 8);
@@ -50,64 +35,46 @@ end component;
     );
 end component;  
 
-    component RCA is  -- to subtract a number to the exponent when 25th bit is 0
-      generic(width: integer := 9);
+    component NORMALIZED_LEFT is
       port(
-          X    : in  std_logic_vector (width - 1 downto 0);
-          Y    : in  std_logic_vector (width - 1 downto 0);
-          CIN  : in  std_logic;
-          S    : out std_logic_vector (width - 1 downto 0);
-          COUT : out std_logic
+        X         :  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+        EXP       :  in  std_logic_vector(7 downto 0);
+        SHIFTALL1 :	 out  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
+        MANTX_LEFT:  out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
+        EXP_LEFT  :  out  std_logic_vector(7 downto 0) -- new exponent depending on the shift
       );
-end component;  
+end component;        
+ 
 
-signal NUMB_SHIFT  : std_logic_vector(7 downto 0);   -- out of the priority encoder
 signal MANTLEFT    : std_logic_vector(22 downto 0);  -- mantix output of the left shift
-signal MANTLEFTINT : std_logic_vector(22 downto 0);  -- mantix output of the left shift intermedie
 signal MANTRIGHT   : std_logic_vector(22 downto 0);  -- manitx output of the right shift
 signal EXPLEFT     : std_logic_vector(7 downto 0);   -- exp output of the left shift
 signal EXPRIGHT    : std_logic_vector(7 downto 0);   -- exp output of the right shift  (exp+1)
 signal EXPRES      : std_logic_vector(7 downto 0);   -- the correct exponent between EXPRIGHT and EXPLEFT
-signal ZERO        : std_logic; -- to know if the results is approx to zero
 signal SHIFTALL1   : std_logic; -- indicates if the result of the sum was 0
 
 
 begin
-    U1: PRI_ENC  -- determinate how much i have to shift left
-      port map(
-        X => X(23 downto 0),
-        Y => NUMB_SHIFT(7 downto 0)
-      );
-
-    U2: SHIFTER_LEFT  -- shift the mantissa left of n bit  
-      port map(
-        X => X(23 downto 0),
-        S => NUMB_SHIFT(7 downto 0),
-        Y => MANTLEFTINT(22 downto 0)
-      );  
-    
-    U3: RCA   --subtract to the exponent n when i have shifted left, if the result of the subtraction is negative the mantix is all0
-      port map(
-        X => '0' & EXP(7 downto 0),
-        Y => '1' & not(NUMB_SHIFT(7 downto 0)),
-        CIN => '1',
-        S(7 downto 0) => EXPLEFT(7 downto 0),
-		  S(8) => ZERO
-      );
-		
-	 SHIFTALL1 <= ((NUMB_SHIFT(0) and NUMB_SHIFT(1)) and (NUMB_SHIFT(2) and NUMB_SHIFT(3))) and ((NUMB_SHIFT(4) and NUMB_SHIFT(5)) and (NUMB_SHIFT(6) and NUMB_SHIFT(7)));
-
-    
+   
     MANTRIGHT <= X(23 downto 1);
     
-    U4: PA  -- to add 1 at the exponent when the shift has to be right
+    U1: NORMALIZED_LEFT  -- elaborate mantissa and exponent when has to be shifted left 
+      port map(
+        X => X,
+        EXP => EXP,
+        SHIFTALL1 => SHIFTALL1,
+        MANTX_LEFT => MANTLEFT,
+        EXP_LEFT => EXPLEFT
+      );
+    
+    U2: PA  -- to add 1 at the exponent when the shift has to be right
       port map(
         X   => EXP(7 downto 0),
         CIN => '1',
         S   => EXPRIGHT(7 downto 0)
       );
     
-    U5: MUX   -- choose the mantissa depending on 25th bit
+    U3: MUX   -- choose the mantissa depending on 25th bit
       generic map(width => 23)
       port map(
         X => MANTLEFT(22 downto 0),
@@ -116,33 +83,23 @@ begin
         Z => NEWMANTX(22 downto 0)
       );
       
-    U6: MUX   -- choose the exponent depending on 25th bit
+    U4: MUX   -- choose the exponent depending on 25th bit
       generic map(width => 8)
       port map(
         X => EXPLEFT(7 downto 0),
         Y => EXPRIGHT(7 downto 0),
         S => C,
         Z => EXPRES(7 downto 0)
-      );  
-      
-    U7: MUX  -- to know if the mantleft is all0s or not
-      generic map(width => 23)
-      port map(
-        X => MANTLEFTINT(22 downto 0),
-        Y => "00000000000000000000000",
-        S => ZERO,
-        Z => MANTLEFT(22 downto 0)   
-      );  
+      );   
 		
-		
-    U8: MUX   -- the exponent has to be zero if the result of the sum between the mantissas was zero
+    U5: MUX   -- the exponent has to be zero if the result of the sum between the mantissas was zero
       generic map(width => 8)
       port map(
         X => EXPRES,
         Y => "00000000",
         S => SHIFTALL1,
         Z => NEWEXP
-      );  
+      ); 
       
      
 end Behavioral;
