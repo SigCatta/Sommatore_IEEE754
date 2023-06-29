@@ -27,7 +27,7 @@ begin
 		
 		posQUATTRO  <= "00000000" & posTRE(23 downto 8) 	when S(3)='1' else posTRE;
 		
-		posCINQUE  <= "0000000000000000" & posQUATTRO(23 downto 16)	when S(4)='1' else posQUATTRO;
+		posCINQUE <=  "0000000000000000" & posQUATTRO(23 downto 16) when s(4)='1' else posQUATTRO;
 		
 		Y  <=   "000000000000000000000000" when S(5) ='1' or S(6)='1'  or  S(7)='1'
 				else posCINQUE;
