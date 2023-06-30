@@ -3,12 +3,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DENORMALIZE is
 	port(
-		X:		  in  std_logic_vector(31 downto 0);
-		Y:		  in  std_logic_vector(31 downto 0);
-		SUB:	  in  std_logic;
-		DNORMX:   out std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
-		DNORMY:   out std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
-		EXP:      out std_logic_vector(7 downto 0)   -- the bigger expontnt
+		X      : in  std_logic_vector(31 downto 0);
+		Y      : in  std_logic_vector(31 downto 0);
+		SUB    : in  std_logic;
+		DNORMX : out std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
+		DNORMY : out std_logic_vector(24 downto 0); -- sign + 24 bit mantissa (must add 1 to the mantissa as per standard)
+		EXP    : out std_logic_vector(7 downto 0)   -- the bigger expontnt
 	);
 end DENORMALIZE;
 
@@ -16,58 +16,58 @@ architecture Behavioral of DENORMALIZE is
 	component MUX is
 		generic(width : integer := 24);
 		port( 
-			X: in  std_logic_vector (width - 1 downto 0);
-			Y: in  std_logic_vector (width - 1 downto 0);
-			S: in  std_logic;
-			Z: out std_logic_vector (width - 1 downto 0)
+			X : in  std_logic_vector (width - 1 downto 0);
+			Y : in  std_logic_vector (width - 1 downto 0);
+			S : in  std_logic;
+			Z : out std_logic_vector (width - 1 downto 0)
 		);
    end component;
 	 
 	component SHIFT_RIGHT_V2 is				-- shifts the smallest number's mantissa
 		port(
-		  X: in  std_logic_vector(23 downto 0);
-		  S: in  std_logic_vector(7 downto 0);
-		  Y: out std_logic_vector(23 downto 0)
+		  X : in  std_logic_vector(23 downto 0);
+		  S : in  std_logic_vector(7 downto 0);
+		  Y : out std_logic_vector(23 downto 0)
 		);
 	end component;
 	 
 	component C2C is								-- calculate the mantissa's 2's complement if necessary
 		generic(width: integer := 25);				-- needs to have an extra sign bit
 		port(
-			N:    in  std_logic_vector (width - 1 downto 0);
-			S:    in  std_logic;
-			Z:    out std_logic_vector (width - 1 downto 0);
-			COUT: out std_logic
+			N    : in  std_logic_vector (width - 1 downto 0);
+			S    : in  std_logic;
+			Z    : out std_logic_vector (width - 1 downto 0);
+			COUT : out std_logic
 		);
 	end component;
 	
 	component ABSDIFF is							-- calculates the absolute difference of the exponents
 		generic(width: integer := 8);
 		port(
-			X: in  std_logic_vector (width - 1 downto 0);
-			Y: in  std_logic_vector (width - 1 downto 0);
-			Z: out std_logic_vector (width - 1 downto 0);
-			C: out std_logic
+			X : in  std_logic_vector (width - 1 downto 0);
+			Y : in  std_logic_vector (width - 1 downto 0);
+			Z : out std_logic_vector (width - 1 downto 0);
+			C : out std_logic
 		);
 	end component;
 	
 	component MUX2 is								-- selects the correct sign for the mantissas
 		port(
-			A: in std_logic;
-			B: in std_logic;
-			S: in std_logic;
-			Z: out std_logic
+			A : in  std_logic;
+			B : in  std_logic;
+			S : in  std_logic;
+			Z : out std_logic
 		);
 	end component;
 
 
-	signal EXPDIFF: std_logic_vector(7 downto 0);  -- absolute difference of the exponents
-	signal M1:      std_logic_vector(23 downto 0); -- shorter number's mantissa
-	signal SM1:     std_logic_vector(23 downto 0); -- shifted M1
-	signal M2:      std_logic_vector(23 downto 0); -- larger number's mantissa
-	signal S1:      std_logic;                     -- sign of SM1
-	signal S2:      std_logic;                     -- sign of M2
-	signal C:       std_logic;                     -- 1 if y > x, 0 otherwise
+	signal EXPDIFF : std_logic_vector(7 downto 0);  -- absolute difference of the exponents
+	signal M1      : std_logic_vector(23 downto 0); -- shorter number's mantissa
+	signal SM1     : std_logic_vector(23 downto 0); -- shifted M1
+	signal M2      : std_logic_vector(23 downto 0); -- larger number's mantissa
+	signal S1      : std_logic;                     -- sign of SM1
+	signal S2      : std_logic;                     -- sign of M2
+	signal C       : std_logic;                     -- 1 if y > x, 0 otherwise
 
 
 

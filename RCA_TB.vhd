@@ -10,19 +10,19 @@ architecture behavior of RCA_TB is
    component RCA
 	 generic(width: integer := 8);      -- using a 8 bit RCA
     port(
-         X 	  : in   std_logic_vector(7 downto 0);
-         Y 	  : in   std_logic_vector(7 downto 0);
-         CIN  : in   std_logic;
-         S 	  : out  std_logic_vector(7 downto 0);
-         COUT : out  std_logic
+         X 	  : in  std_logic_vector(7 downto 0);
+         Y 	  : in  std_logic_vector(7 downto 0);
+         CIN  : in  std_logic;
+         S 	  : out std_logic_vector(7 downto 0);
+         COUT : out std_logic
       );
    end component;
     
 
    --Inputs
-   signal X 	: std_logic_vector(7 downto 0);
-   signal Y 	: std_logic_vector(7 downto 0);
-   signal CIN  : std_logic;
+   signal X   : std_logic_vector(7 downto 0);
+   signal Y   : std_logic_vector(7 downto 0);
+   signal CIN : std_logic;
 
  	--Outputs
    signal S 	: std_logic_vector(7 downto 0);

@@ -3,11 +3,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DENORMALIZED_SUM is
 	port(
-		X:    in  std_logic_vector(24 downto 0);
-		Y:    in  std_logic_vector(24 downto 0);
-		M:    out std_logic_vector(23 downto 0);
-		SIGN: out std_logic;
-		INCR: out std_logic -- indicats if the the exponent will have to be incremented by one 
+		X    : in  std_logic_vector(24 downto 0);
+		Y    : in  std_logic_vector(24 downto 0);
+		M    : out std_logic_vector(23 downto 0);
+		SIGN : out std_logic;
+		INCR : out std_logic -- indicats if the the exponent will have to be incremented by one 
 	);
 end DENORMALIZED_SUM;
 
@@ -38,16 +38,16 @@ architecture Behavioral of DENORMALIZED_SUM is
 	component MUX is														-- selects between the result and it's 2's complement
 		generic(width : integer := 24);
 		port(
-			X    : in  std_logic_vector (width - 1 downto 0);
-			Y    : in  std_logic_vector (width - 1 downto 0);
-			S    : in  std_logic;
-			Z    : out std_logic_vector (width - 1 downto 0)
+			X : in  std_logic_vector (width - 1 downto 0);
+			Y : in  std_logic_vector (width - 1 downto 0);
+			S : in  std_logic;
+			Z : out std_logic_vector (width - 1 downto 0)
 		);
 	end component;
 	
-	signal S:    std_logic_vector(25 downto 0);
-	signal NEGS: std_logic_vector(23 downto 0);
-	signal COUT: std_logic;
+	signal S    : std_logic_vector(25 downto 0);
+	signal NEGS : std_logic_vector(23 downto 0);
+	signal COUT : std_logic;
 
 begin
 

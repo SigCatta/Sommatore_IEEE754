@@ -6,11 +6,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity NORMALIZER is
     port(
-    X       :	 in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
-    EXP     :  in  std_logic_vector(7 downto 0);
-    C       :	 in  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
-    NEWMANTX:  out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
-    NEWEXP  :  out  std_logic_vector(7 downto 0) -- new exponent depending on the shift
+    X        :	in  std_logic_vector(23 downto 0);		-- mantissa of the sum already complemented
+    EXP      : in  std_logic_vector(7 downto 0);
+    C        :	in  std_logic;								-- overflow of the sum that determinate if the mantissa has to be shifted left or right
+    NEWMANTX : out std_logic_vector(22 downto 0);		-- new mantissa of the result shifted and without the first 1 
+    NEWEXP   : out std_logic_vector(7 downto 0)		-- new exponent depending on the shift
 	);
 end NORMALIZER;
 
@@ -18,10 +18,10 @@ architecture Behavioral of NORMALIZER is
   component MUX is -- check if the 25th bit is 1 or 0 to shift right or left
      generic(width : integer:= 5);
      port( 
-          X    : in  std_logic_vector (width - 1 downto 0);
-          Y    : in  std_logic_vector (width - 1 downto 0);
-          S    : in  std_logic;
-          Z    : out std_logic_vector (width - 1 downto 0)
+          X : in  std_logic_vector (width - 1 downto 0);
+          Y : in  std_logic_vector (width - 1 downto 0);
+          S : in  std_logic;
+          Z : out std_logic_vector (width - 1 downto 0)
       );
    end component;
     
@@ -37,11 +37,11 @@ end component;
 
     component NORMALIZED_LEFT is
       port(
-        X         :  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
-        EXP       :  in  std_logic_vector(7 downto 0);
-        SHIFTALL1 :	 out  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
-        MANTX_LEFT:  out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
-        EXP_LEFT  :  out  std_logic_vector(7 downto 0) -- new exponent depending on the shift
+        X          : in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+        EXP        : in  std_logic_vector(7 downto 0);
+        SHIFTALL1  : out std_logic;								-- overflow of the sum that determinate if the mantissa has to be shifted left or right
+        MANTX_LEFT : out std_logic_vector(22 downto 0);	-- new mantissa of the result shifted and without the first 1 
+        EXP_LEFT   : out std_logic_vector(7 downto 0) 		-- new exponent depending on the shift
       );
 end component;        
  
@@ -59,11 +59,11 @@ begin
     
     U1: NORMALIZED_LEFT  -- elaborate mantissa and exponent when has to be shifted left 
       port map(
-        X => X,
-        EXP => EXP,
-        SHIFTALL1 => SHIFTALL1,
+        X          => X,
+        EXP        => EXP,
+        SHIFTALL1  => SHIFTALL1,
         MANTX_LEFT => MANTLEFT,
-        EXP_LEFT => EXPLEFT
+        EXP_LEFT   => EXPLEFT
       );
     
     U2: PA  -- to add 1 at the exponent when the shift has to be right
