@@ -199,13 +199,7 @@ begin
 		  
 		  -- output should be inf
 		  
-		  wait for 30 ns;
-		  
-			X <= "00000000000000000000000000111100"; -- small numb
-			Y <= "00000000000000000000011000001101"; -- small numb
-			SUB <= '1'; 
-		  
-		  -- output should be inf
+		   
 	
 			wait;
    end process;

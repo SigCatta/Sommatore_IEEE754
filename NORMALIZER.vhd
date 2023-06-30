@@ -50,7 +50,6 @@ signal MANTLEFT    : std_logic_vector(22 downto 0);  -- mantix output of the lef
 signal MANTRIGHT   : std_logic_vector(22 downto 0);  -- manitx output of the right shift
 signal EXPLEFT     : std_logic_vector(7 downto 0);   -- exp output of the left shift
 signal EXPRIGHT    : std_logic_vector(7 downto 0);   -- exp output of the right shift  (exp+1)
-signal EXPRES      : std_logic_vector(7 downto 0);   -- the correct exponent between EXPRIGHT and EXPLEFT
 signal SHIFTALL1   : std_logic; -- indicates if the result of the sum was 0
 
 
@@ -86,20 +85,12 @@ begin
     U4: MUX   -- choose the exponent depending on 25th bit
       generic map(width => 8)
       port map(
-        X => EXPLEFT(7 downto 0),
-        Y => EXPRIGHT(7 downto 0),
+        X => EXPLEFT,
+        Y => EXPRIGHT,
         S => C,
-        Z => EXPRES(7 downto 0)
-      );   
-		
-    U5: MUX   -- the exponent has to be zero if the result of the sum between the mantissas was zero
-      generic map(width => 8)
-      port map(
-        X => EXPRES,
-        Y => "00000000",
-        S => SHIFTALL1,
         Z => NEWEXP
-      ); 
+      );   
+			
       
      
 end Behavioral;
