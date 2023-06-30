@@ -22,8 +22,8 @@ architecture Behavioral of NORMALIZE is
 			X        : in  std_logic_vector(23 downto 0);
 			EXP      : in  std_logic_vector(7 downto 0);
 			C        : in  std_logic;
-			NEWMANTX : out std_logic_vector(22 downto 0);
-			NEWEXP   : out std_logic_vector(7 downto 0)
+			NORMMANTX : out std_logic_vector(22 downto 0);
+			NORMEXP   : out std_logic_vector(7 downto 0)
 		);
 	end component;
 	
@@ -39,18 +39,18 @@ architecture Behavioral of NORMALIZE is
 		);
 	end component;
 	
-	signal NORMMAN : std_logic_vector(22 downto 0);
-	signal NORMEXP : std_logic_vector(7 downto 0);
+	signal NORMMANTX : std_logic_vector(22 downto 0);
+	signal NORMEXP   : std_logic_vector(7 downto 0);
 
 begin
 
 	U1: NORMALIZER
 		port map(
-			X        => MAN,
-			EXP      => EXP,
-			C        => INCR,
-			NEWMANTX => NORMMAN,
-			NEWEXP   => NORMEXP
+			X         => MAN,
+			EXP       => EXP,
+			C         => INCR,
+			NORMMANTX => NORMMANTX,
+			NORMEXP   => NORMEXP
 		);
 		
 	U2: SNC
@@ -60,7 +60,7 @@ begin
 			NAN  => NAN,
 			SIGN => SIGN,
 			EXP  => NORMEXP,
-			MAN  => NORMMAN,
+			MAN  => NORMMANTX,
 			Z    => Z
 		);
 

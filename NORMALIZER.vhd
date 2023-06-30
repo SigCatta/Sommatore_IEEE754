@@ -6,11 +6,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity NORMALIZER is
     port(
-    X        :	in  std_logic_vector(23 downto 0);		-- mantissa of the sum already complemented
-    EXP      : in  std_logic_vector(7 downto 0);
-    C        :	in  std_logic;								-- overflow of the sum that determinate if the mantissa has to be shifted left or right
-    NEWMANTX : out std_logic_vector(22 downto 0);		-- new mantissa of the result shifted and without the first 1 
-    NEWEXP   : out std_logic_vector(7 downto 0)		-- new exponent depending on the shift
+    X         :	in  std_logic_vector(23 downto 0);		-- mantissa of the sum already complemented
+    EXP       : in  std_logic_vector(7 downto 0);
+    C         :	in  std_logic;								-- overflow of the sum that determinate if the mantissa has to be shifted left or right
+    NORMMANTX : out std_logic_vector(22 downto 0);		-- new mantissa of the result shifted and without the first 1 
+    NORMEXP   : out std_logic_vector(7 downto 0)		-- new exponent depending on the shift
 	);
 end NORMALIZER;
 
@@ -77,7 +77,7 @@ begin
         X => MANTLEFT,
         Y => MANTRIGHT,
         S => C,
-        Z => NEWMANTX
+        Z => NORMMANTX
       );
       
     U4: MUX   -- choose the exponent depending on the sum's 25th bit
@@ -86,7 +86,7 @@ begin
         X => EXPLEFT,
         Y => EXPRIGHT,
         S => C,
-        Z => NEWEXP
+        Z => NORMEXP
       );   
 			
       

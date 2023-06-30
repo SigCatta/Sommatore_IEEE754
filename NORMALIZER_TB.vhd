@@ -12,11 +12,11 @@ architecture behavior of NORMALIZER_TB is
  
    component NORMALIZER
    port(
-      X        : in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
-      EXP      : in  std_logic_vector(7 downto 0);    -- the bigger number's exponent
-      C        : in  std_logic;                       -- overflow of the sum that determinate if the mantissa has to be shifted left or right
-      NEWMANTX : out std_logic_vector(22 downto 0);   -- new mantissa of the result appropiately shifted and without the first 1 
-      NEWEXP   : out std_logic_vector(7 downto 0)     -- new exponent depending on the shift 
+      X         : in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+      EXP       : in  std_logic_vector(7 downto 0);    -- the bigger number's exponent
+      C         : in  std_logic;                       -- overflow of the sum that determinate if the mantissa has to be shifted left or right
+      NORMMANTX : out std_logic_vector(22 downto 0);   -- new mantissa of the result appropiately shifted and without the first 1 
+      NORMEXP   : out std_logic_vector(7 downto 0)     -- new exponent depending on the shift 
    );
    end component;
     
@@ -26,56 +26,56 @@ architecture behavior of NORMALIZER_TB is
  signal C   : std_logic;
 
   --Outputs
- signal NEWMANTX : std_logic_vector(22 downto 0);
- signal NEWEXP   : std_logic_vector(7 downto 0);
+ signal NORMMANTX : std_logic_vector(22 downto 0);
+ signal NORMEXP   : std_logic_vector(7 downto 0);
 
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: NORMALIZER
    port map (
-      X => X,
-      EXP => EXP,
-      C => C,
-      NEWMANTX => NEWMANTX,
-      NEWEXP => NEWEXP
+      X         => X,
+      EXP       => EXP,
+      C         => C,
+      NORMMANTX => NORMMANTX,
+      NORMEXP   => NORMEXP
    );
 
  
 process
    begin		
-         X <= "000000000000000000000000";
+         X   <= "000000000000000000000000";
          EXP <= "00000000";
-         C <= '0';
+         C   <= '0';
 
       -- output should be all0s
       wait for 100 ns;	
 
-         X <= "010111000000000000000000";
+         X   <= "010111000000000000000000";
          EXP <= "10000110";
-         C <= '1';
+         C   <= '1';
       
-      -- output should be NEWMANT-> 01011100000000000000000  and NEWEXP-> 10000111
+      -- output should be NORMMANTX-> 01011100000000000000000  and NORMEXP-> 10000111
       wait for 20 ns;	
       
-         X <= "000000000000000000000011";
+         X   <= "000000000000000000000011";
          EXP <= "01010100";
-         C <= '0';
+         C   <= '0';
       
-      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
+      -- output should be NORMMANTX-> 10000000000000000000000  and NORMEXP-> 00111110
       wait for 20 ns;
-         X <= "000000000000000000000000";
+         X   <= "000000000000000000000000";
          EXP <= "01010100";
-         C <= '0';
+         C   <= '0';
       
-      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00000000
+      -- output should be NORMMANTX-> 10000000000000000000000  and NORMEXP-> 00000000
       wait for 20 ns;
 
-         X <= "000000000000000000000011";
+         X   <= "000000000000000000000011";
          EXP <= "01010100";
-         C <= '0';
+         C   <= '0';
       
-      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
+      -- output should be NORMMANTX-> 10000000000000000000000  and NORMEXP-> 00111110
       wait;
    end process;	
 

@@ -50,6 +50,7 @@
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral/U1 - RCA - STRUCT</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral/U2 - C2C - STRUCT</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral/U1 - NORMALIZER - Behavioral/U1 - NORMALIZED_LEFT - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral/U1 - NORMALIZER - Behavioral/U2 - PA - STRUCT</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral/U1 - NORMALIZER - Behavioral/U3 - MUX - Behavioral</ClosedNode>
@@ -69,13 +70,13 @@
          <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U5 - SNC - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>U4 - NORMALIZE - Behavioral (/media/sf_Sommatore_IEEE754/NORMALIZE.vhd)</SelectedItem>
+         <SelectedItem>SOMMATORE_IEEE754 - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000212000000020000000000000000000000000200000064ffffffff000000810000000300000002000002120000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>U4 - NORMALIZE - Behavioral (/media/sf_Sommatore_IEEE754/NORMALIZE.vhd)</CurrentItem>
+      <CurrentItem>SOMMATORE_IEEE754 - Behavioral (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -167,6 +168,7 @@
          <ClosedNode>/SHIFT_RIGHT_TB - behavior |media|sf_Sommatore_IEEE754|SHIFT_RIGHT_TB.vhd</ClosedNode>
          <ClosedNode>/SHIFT_RIGHT_V2_TB - behavior |media|sf_Sommatore_IEEE754|SHIFT_RIGHT_V2TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd</ClosedNode>
+         <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U1 - DENORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U4 - NORMALIZE - Behavioral/U1 - NORMALIZER - Behavioral</ClosedNode>
@@ -184,9 +186,9 @@
       <SelectedItems>
          <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000222000000020000000000000000000000000200000064ffffffff000000810000000300000002000002220000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000200000000020000000000000000000000000200000064ffffffff000000810000000300000002000002000000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_Sommatore_IEEE754/SOMMATORE_IEEE754_TB.vhd)</CurrentItem>
    </ItemView>
@@ -301,7 +303,7 @@
       <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff000000000000000200000162000000b301000000060100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
