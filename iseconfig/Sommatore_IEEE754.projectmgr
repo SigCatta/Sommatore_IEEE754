@@ -50,16 +50,6 @@
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U3 - DENORMALIZED_SUM - Behavioral/U2 - C2C - STRUCT</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_prog-reti-logiche|SOMMATORE_IEEE754.vhd</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U1 - DENORMALIZE - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZE - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral/U3 - RCA - STRUCT</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral/U4 - PA - STRUCT</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral/U5 - MUX - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral/U6 - MUX - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U4 - NORMALIZER - Behavioral/U7 - MUX - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd/U5 - SNC - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>SOMMATORE_IEEE754 - Behavioral (/media/sf_prog-reti-logiche/SOMMATORE_IEEE754.vhd)</SelectedItem>
@@ -160,13 +150,6 @@
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_prog-reti-logiche|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U1 - DENORMALIZE - Behavioral</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_prog-reti-logiche|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE.vhd</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U1 - DENORMALIZE - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U3 - DENORMALIZED_SUM - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U4 - NORMALIZE - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U4 - NORMALIZER - Behavioral</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd/UUT - SOMMATORE_NOPIPELINE - Behavioral/U5 - SNC - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_prog-reti-logiche/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
@@ -217,7 +200,6 @@
          <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
-         <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>SOMMATORE_IEEE754_TB - behavior (/media/sf_prog-reti-logiche/SOMMATORE_IEEE754_TB.vhd)</SelectedItem>
