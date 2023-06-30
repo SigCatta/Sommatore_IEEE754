@@ -16,7 +16,7 @@ end NORMALIZER;
 
 architecture Behavioral of NORMALIZER is
   component MUX is -- check if the 25th bit is 1 or 0 to shift right or left
-     generic(width : integer:= 5);
+     generic(width : integer);
      port( 
           X : in  std_logic_vector (width - 1 downto 0);
           Y : in  std_logic_vector (width - 1 downto 0);
@@ -26,7 +26,7 @@ architecture Behavioral of NORMALIZER is
    end component;
     
     component PA is  -- to add 1 at the exponent when the 25th bit is 1
-    generic(width : integer := 8);
+    generic(width : integer);
       port(
         X    : in  std_logic_vector (width - 1 downto 0);
         CIN  : in  std_logic;
@@ -37,11 +37,10 @@ end component;
 
     component NORMALIZED_LEFT is
       port(
-        X          : in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+        X          : in  std_logic_vector(23 downto 0);	-- mantissa of the sum already complemented
         EXP        : in  std_logic_vector(7 downto 0);
-        SHIFTALL1  : out std_logic;								-- overflow of the sum that determinate if the mantissa has to be shifted left or right
         MANTX_LEFT : out std_logic_vector(22 downto 0);	-- new mantissa of the result shifted and without the first 1 
-        EXP_LEFT   : out std_logic_vector(7 downto 0) 		-- new exponent depending on the shift
+        EXP_LEFT   : out std_logic_vector(7 downto 0) 	-- new exponent depending on the shift
       );
 end component;        
  
@@ -50,39 +49,38 @@ signal MANTLEFT    : std_logic_vector(22 downto 0);  -- mantix output of the lef
 signal MANTRIGHT   : std_logic_vector(22 downto 0);  -- manitx output of the right shift
 signal EXPLEFT     : std_logic_vector(7 downto 0);   -- exp output of the left shift
 signal EXPRIGHT    : std_logic_vector(7 downto 0);   -- exp output of the right shift  (exp+1)
-signal SHIFTALL1   : std_logic; -- indicates if the result of the sum was 0
 
 
 begin
    
     MANTRIGHT <= X(23 downto 1);
     
-    U1: NORMALIZED_LEFT  -- elaborate mantissa and exponent when has to be shifted left 
+    U1: NORMALIZED_LEFT  -- elaborate mantissa and exponent in case of a left shift
       port map(
         X          => X,
         EXP        => EXP,
-        SHIFTALL1  => SHIFTALL1,
         MANTX_LEFT => MANTLEFT,
         EXP_LEFT   => EXPLEFT
       );
     
-    U2: PA  -- to add 1 at the exponent when the shift has to be right
+    U2: PA  -- add 1 at the exponent in case the shift has to be right
+		generic map(width => 8)
       port map(
-        X   => EXP(7 downto 0),
+        X   => EXP,
         CIN => '1',
-        S   => EXPRIGHT(7 downto 0)
+        S   => EXPRIGHT
       );
     
-    U3: MUX   -- choose the mantissa depending on 25th bit
+    U3: MUX   -- choose the mantissa depending on the sum's 25th bit
       generic map(width => 23)
       port map(
-        X => MANTLEFT(22 downto 0),
-        Y => MANTRIGHT(22 downto 0),
+        X => MANTLEFT,
+        Y => MANTRIGHT,
         S => C,
-        Z => NEWMANTX(22 downto 0)
+        Z => NEWMANTX
       );
       
-    U4: MUX   -- choose the exponent depending on 25th bit
+    U4: MUX   -- choose the exponent depending on the sum's 25th bit
       generic map(width => 8)
       port map(
         X => EXPLEFT,

@@ -16,43 +16,21 @@ end SNC;
 
 architecture Behavioral of SNC is
 
-	component MUX is
-		generic(width: integer);
-      port(
-			X : in  std_logic_vector (width - 1 downto 0);
-			Y : in  std_logic_vector (width - 1 downto 0);
-			S : in  std_logic;
-			Z : out std_logic_vector (width - 1 downto 0)
-		);
-	end component;
-
 	signal SPECIAL  : std_logic;
 	signal MANTISSA : std_logic_vector(22 downto 0);
 
 begin
 
 	SPECIAL <= PINF or NINF or NAN;
-	
-	U1: MUX								-- calculates the exponent relative to special numbers
-		generic map(width => 8)
-		port map(
-			X => EXP,
-			Y => (others => '1'),
-			S => SPECIAL,
-			Z => Z(30 downto 23)
-		);
-	
-
+	-- if calculated exponent is 255, the number should be an infinity, therefore the mantissa should be 0
 	MANTISSA <= MAN when EXP /= "11111111" else (others => '0');
 	
-	U2: MUX								-- calculates the mantissa relative to special numbers
-		generic map(width => 23)
-		port map(
-			X => MANTISSA,
-			Y => "0000000000000000000000" & NAN,
-			S => SPECIAL,
-			Z => Z(22 downto 0)
-		);
 	Z(31) <= (SIGN and (not SPECIAL)) or (NINF and SPECIAL);
+	
+	-- if the result is a special number, the exponent must be 255
+	Z(30 downto 23) <= EXP when SPECIAL = '0' else (others => '1');
+
+	-- if the result is a special number the mantissa is all 0s if infinity or a number other then 0 if NaN
+	Z(22 downto 0) <= MANTISSA when SPECIAL = '0' else "0000000000000000000000" & NAN;
 	
 end Behavioral;

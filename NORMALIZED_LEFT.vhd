@@ -7,7 +7,6 @@ entity NORMALIZED_LEFT is
 	port(
 		X          : in  std_logic_vector(23 downto 0);	-- mantissa of the sum already complemented
 		EXP        : in  std_logic_vector(7 downto 0);	-- the bigger number's exponent
-		SHIFTALL1  : out std_logic; 							-- overflow of the sum that determinate if the mantissa has to be shifted left or right
 		MANTX_LEFT : out std_logic_vector(22 downto 0);	-- new mantissa of the result shifted and without the first 1 
 		EXP_LEFT   : out std_logic_vector(7 downto 0)	-- new exponent depending on the shift
 	);
@@ -31,7 +30,7 @@ architecture Behavioral of NORMALIZED_LEFT is
 	end component;
 
 	component RCA is  -- to subtract a number to the exponent when 25th bit is 0
-		generic(width: integer := 9);
+		generic(width: integer);
 		port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			Y    : in  std_logic_vector (width - 1 downto 0);
@@ -72,9 +71,10 @@ begin
 	);
 	
 	U3: RCA   --subtract to the exponent n when i have shifted left, if the result of the subtraction is negative the mantix is all0
+	generic map (width => 9)
 	port map(
 		X    => '0' & EXP,
-		Y    => '1' & not(NUMB_SHIFT),
+		Y    => '1' & (not NUMB_SHIFT),
 		CIN  => '1',
 		S(7 downto 0) => EXPLEFTINT,
 		S(8) => ZERO
@@ -84,7 +84,7 @@ begin
 	generic map(width => 8)
 	port map(
 		X => EXPLEFTINT,
-		Y => "00000000",
+		Y => (others => '0'),
 		S => ZERO,
 		Z => EXP_LEFT 
 	);
@@ -93,12 +93,10 @@ begin
 	generic map(width => 23)
 	port map(
 		X => MANTLEFTINT,
-		Y => "00000000000000000000000",
+		Y => (others => '0'),
 		S => ZERO,
 		Z => MANTX_LEFT   
 	);
-
-	SHIFTALL1 <= '1' when NUMB_SHIFT="11111111";  
 
 end Behavioral;
 
