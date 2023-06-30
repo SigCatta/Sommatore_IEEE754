@@ -156,7 +156,6 @@
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|RCA_TB.vhd/UUT - RCA - STRUCT</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_prog-reti-logiche|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/SHIFTER_LEFT_TB - behavior |media|sf_Sommatore_IEEE754|SHIFTER_LEFT_TB.vhd</ClosedNode>
-         <ClosedNode>/SHIFT_RIGHT_V2_TB - behavior |media|sf_Sommatore_IEEE754|SHIFT_RIGHT_V2TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754 - Behavioral |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_IEEE754_TB.vhd</ClosedNode>
          <ClosedNode>/SOMMATORE_IEEE754_TB - behavior |media|sf_prog-reti-logiche|SOMMATORE_IEEE754_TB.vhd/UUT - SOMMATORE_IEEE754 - Behavioral/U1 - DENORMALIZE - Behavioral</ClosedNode>
@@ -218,7 +217,6 @@
          <ClosedNode>/FA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|FA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
          <ClosedNode>/RCA_TB - behavior |media|sf_Sommatore_IEEE754|Sommatore_IEEE754|RCA_TB.vhd</ClosedNode>
-         <ClosedNode>/SHIFT_RHIGT_V2_TB - behavior |media|sf_prog-reti-logiche|SHIFT_RIGHT_V2TB.vhd/uut - SHIFT_RHIGT_V2 - Structure</ClosedNode>
          <ClosedNode>/SOMMATORE_NOPIPELINE_TB - behavior |media|sf_Sommatore_IEEE754|SOMMATORE_NOPIPELINE_TB.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>

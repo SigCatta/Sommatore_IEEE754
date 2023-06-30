@@ -23,7 +23,7 @@ architecture Behavioral of DENORMALIZE is
 		);
    end component;
 	 
-	component SHIFT_RIGHT_V2 is				-- shifts the smallest number's mantissa
+	component SHIFT_RIGHT is				-- shifts the smallest number's mantissa
 		port(
 		  X : in  std_logic_vector(23 downto 0);
 		  S : in  std_logic_vector(7 downto 0);
@@ -80,7 +80,7 @@ begin
 			C => C
 		);
 	
-	U2: SHIFT_RIGHT_V2				-- shifts the number with the smallest exponent by the difference to the absolute difference between the exponents
+	U2: SHIFT_RIGHT				-- shifts the number with the smallest exponent by the difference to the absolute difference between the exponents
 		port map(
 			X => M1,
 			S => EXPDIFF,
