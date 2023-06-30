@@ -10,12 +10,12 @@ architecture behavior of CLU_TB is
  
    component CLU
 	port(
-		X:		in	 std_logic_vector(31 downto 0);
-		Y:		in	 std_logic_vector(31 downto 0);
-		SUB:	in	 std_logic;
-		PINF: out std_logic;		-- 1 if +inf
-		NINF: out std_logic;		-- 1 if -inf
-		NAN:	out std_logic
+		X    : in  std_logic_vector(31 downto 0);
+		Y    : in  std_logic_vector(31 downto 0);
+		SUB  : in  std_logic;
+		PINF : out std_logic;		-- 1 if +inf
+		NINF : out std_logic;		-- 1 if -inf
+		NAN  : out std_logic
 	);
 	end component;
     
@@ -52,49 +52,49 @@ begin
 		Y <= "00000000000000000000000000000000";
 		SUB <= '0';
 		
-		wait for 100 ns;
+	wait for 100 ns;
 		
 		X <= "01111111100000000000000000000000";
 		Y <= "00000000000000000000000000000000";
 		SUB <= '0';
 		-- PINF 1, NINF 0, NAN 0s
 		
-		wait for 40 ns;
+	wait for 40 ns;
 		
 		X <= "01111111100000000000000000000000";
 		Y <= "11111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 0, NAN 1
 		
-		wait for 40 ns;
+	wait for 40 ns;
 		
 		X <= "01111111100000000000000000000000";
 		Y <= "01111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 1, NINF 0, NAN 0
 		
-		wait for 40 ns;
+	wait for 40 ns;
 		
 		X <= "00000000011111111100000000000000"; -- positive number
 		Y <= "11111111100000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 1, NAN 0
 		
-		wait for 40 ns;
+	wait for 40 ns;
 		
 		X <= "01110111100000000000110000000000";
 		Y <= "11111111110000000000000000000000";
 		SUB <= '0';
 		-- PINF 0, NINF 0, NAN 1
 		
-		wait for 40 ns;
+	wait for 40 ns;
 		
 		X <= "11111111100000000000000000000000";
 		Y <= "11001001100101101011010000111000";
 		SUB <= '1';
 		-- PINF 0, NINF 1, NAN 0
 		
-		wait;
+	wait;
 
    end process;
 

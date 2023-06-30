@@ -5,8 +5,8 @@ use IEEE.STD_LOGIC_1164.ALL;
  
 entity PRI_ENC is
     port(
-        X: in  std_logic_vector(23 downto 0);
-        Y: out std_logic_vector(7 downto 0)
+        X : in  std_logic_vector(23 downto 0);
+        Y : out std_logic_vector(7 downto 0)
     );
 end PRI_ENC;
  

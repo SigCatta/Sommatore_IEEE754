@@ -30,12 +30,12 @@ begin
  
 	-- Instantiate the Unit Under Test (UUT)
    UUT: C2C 
-      port map (
-         N    => N,
-         S    => S,
-         Z    => Z,
-         COUT => COUT 
-      );
+   port map (
+      N    => N,
+      S    => S,
+      Z    => Z,
+      COUT => COUT 
+   );
 
    process
    begin		

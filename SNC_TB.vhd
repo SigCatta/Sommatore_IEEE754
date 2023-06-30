@@ -1,26 +1,26 @@
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
- 
+library ieee;
+use ieee.std_logic_1164.ALL;
 
-ENTITY SNC_TB IS
-END SNC_TB;
+
+entity SNC_TB is
+end SNC_TB;
  
-ARCHITECTURE behavior OF SNC_TB IS 
+architecture behavior of SNC_TB is 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT SNC
-    PORT(
-         PINF : IN  std_logic;
-         NINF : IN  std_logic;
-         NAN : IN  std_logic;
-         SIGN : IN  std_logic;
-         EXP : IN  std_logic_vector(7 downto 0);
-         MAN : IN  std_logic_vector(22 downto 0);
-         Z : OUT  std_logic_vector(31 downto 0)
-        );
-    END COMPONENT;
+    component SNC
+    port(
+         PINF : in  std_logic;
+         NINF : in  std_logic;
+         NAN  : in  std_logic;
+         SIGN : in  std_logic;
+         EXP  : in  std_logic_vector(7 downto 0);
+         MAN  : in  std_logic_vector(22 downto 0);
+         Z    : out std_logic_vector(31 downto 0)
+         );
+    end component;
     
 
    --Inputs
@@ -85,5 +85,5 @@ process
       wait;
    end process;
 
-END;
+end;
 

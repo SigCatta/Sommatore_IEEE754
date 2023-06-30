@@ -17,9 +17,9 @@ ARCHITECTURE behavior OF PRI_ENC_TB IS
     END COMPONENT;
 
      --Inputs
-     signal X   : std_logic_vector(23 downto 0);
+     signal X : std_logic_vector(23 downto 0);
      --Outputs
-     signal Y   : std_logic_vector(7 downto 0);
+     signal Y : std_logic_vector(7 downto 0);
     
 BEGIN
  

@@ -5,9 +5,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity SHIFT_RIGHT is
     port(
-        X: in  std_logic_vector(23 downto 0);
-        S: in  std_logic_vector(7 downto 0);
-        Y: out std_logic_vector(23 downto 0)
+        X : in  std_logic_vector(23 downto 0);
+        S : in  std_logic_vector(7 downto 0);
+        Y : out std_logic_vector(23 downto 0)
     );
 end SHIFT_RIGHT;
 
@@ -37,5 +37,5 @@ begin
             "00000000000000000000" & X(23 downto 20) when "00010100",
             "000000000000000000000" & X(23 downto 21) when "00010101",
             "0000000000000000000000" & X(23 downto 22) when "00010110",
-            "000000000000000000000000" when others; 
+            (others => '0') when others; 
 end STRUCT;

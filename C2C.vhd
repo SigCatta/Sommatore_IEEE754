@@ -30,12 +30,12 @@ begin
 	PAIN <= not N when S = '1' else N;
 	
 	U1: PA
-		port map(
-			X    => PAIN,
-			CIN  => S,
-			S    => Z,
-			COUT => COUT
-		);
+	port map(
+		X    => PAIN,
+		CIN  => S,
+		S    => Z,
+		COUT => COUT
+	);
     
 
 end STRUCT;

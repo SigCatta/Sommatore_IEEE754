@@ -1,81 +1,82 @@
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
  
  
-ENTITY NORMALIZER_TB IS
-END NORMALIZER_TB;
+entity NORMALIZER_TB is
+end NORMALIZER_TB;
  
-ARCHITECTURE behavior OF NORMALIZER_TB IS 
+architecture behavior of NORMALIZER_TB is 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT NORMALIZER
-    PORT(
-      X:	  in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
-      EXP:  in  std_logic_vector(7 downto 0);
-      C:	  in  std_logic; -- overflow of the sum that determinate if the mantissa has to be shifted left or right
-      NEWMANTX: out  std_logic_vector(22 downto 0); -- new mantissa of the result shifted and without the first 1 
-      NEWEXP: out  std_logic_vector(7 downto 0) -- new exponent depending on the shift 
-        );
-    END COMPONENT;
+   component NORMALIZER
+   port(
+      X        : in  std_logic_vector(23 downto 0);   -- mantissa of the sum already complemented
+      EXP      : in  std_logic_vector(7 downto 0);    -- the bigger number's exponent
+      C        : in  std_logic;                       -- overflow of the sum that determinate if the mantissa has to be shifted left or right
+      NEWMANTX : out std_logic_vector(22 downto 0);   -- new mantissa of the result appropiately shifted and without the first 1 
+      NEWEXP   : out std_logic_vector(7 downto 0)     -- new exponent depending on the shift 
+   );
+   end component;
     
  --Inputs
  signal X   : std_logic_vector(23 downto 0);
- signal EXP   : std_logic_vector(7 downto 0);
- signal C : std_logic;
+ signal EXP : std_logic_vector(7 downto 0);
+ signal C   : std_logic;
 
   --Outputs
  signal NEWMANTX : std_logic_vector(22 downto 0);
- signal NEWEXP : std_logic_vector(7 downto 0);
+ signal NEWEXP   : std_logic_vector(7 downto 0);
 
-BEGIN
+begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: NORMALIZER PORT MAP (
-       X => X,
-       EXP => EXP,
-       C => C,
-       NEWMANTX => NEWMANTX,
-       NEWEXP => NEWEXP
-        );
+   uut: NORMALIZER
+   port map (
+      X => X,
+      EXP => EXP,
+      C => C,
+      NEWMANTX => NEWMANTX,
+      NEWEXP => NEWEXP
+   );
 
  
 process
    begin		
-      X <= "000000000000000000000000";
-      EXP <= "00000000";
-      C <= '0';
+         X <= "000000000000000000000000";
+         EXP <= "00000000";
+         C <= '0';
 
-       -- output should be all0s
+      -- output should be all0s
       wait for 100 ns;	
 
-      X <= "010111000000000000000000";
-      EXP <= "10000110";
-      C <= '1';
+         X <= "010111000000000000000000";
+         EXP <= "10000110";
+         C <= '1';
       
-       -- output should be NEWMANT-> 01011100000000000000000  and NEWEXP-> 10000111
+      -- output should be NEWMANT-> 01011100000000000000000  and NEWEXP-> 10000111
       wait for 20 ns;	
       
-		X <= "000000000000000000000011";
-      EXP <= "01010100";
-      C <= '0';
+         X <= "000000000000000000000011";
+         EXP <= "01010100";
+         C <= '0';
       
-       -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
+      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
       wait for 20 ns;
-      X <= "000000000000000000000000";
-      EXP <= "01010100";
-      C <= '0';
+         X <= "000000000000000000000000";
+         EXP <= "01010100";
+         C <= '0';
       
-       -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00000000
+      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00000000
       wait for 20 ns;
 
-      X <= "000000000000000000000011";
-      EXP <= "01010100";
-      C <= '0';
+         X <= "000000000000000000000011";
+         EXP <= "01010100";
+         C <= '0';
       
-       -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
+      -- output should be NEWMANT-> 10000000000000000000000  and NEWEXP-> 00111110
       wait;
    end process;	
 
-END;
+end;
