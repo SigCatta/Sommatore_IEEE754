@@ -156,52 +156,50 @@ begin
 			X <= "11111111100000000000000110000000"; -- NAN
 			Y <= "11001001100101101011010000111000"; -- -1234567
 			SUB <= '1';
-
 			-- output should be x11111111aaaaaaaaaaaaaaaaaaaaaaa (NAN) at least one bit in the mantissa has to be 1
+		
+		wait for 30 ns;
 			X <= "01111111100101101011010000111000"; -- NaN
 			Y <= "00000000000000000000000000000000"; -- 0
 			SUB <= '0';
-			
 			-- output should be NaN
+
 		wait for 30 ns;
 		  
 			X <= "01111111100101101011000000101000"; -- NaN
 			Y <= "00000000000000000000000000000000"; -- 0
 			SUB <= '1';
-			
 			-- output should be NaN
+
 	   wait for 30 ns;
 		  
 			X <= "01111111100101101011000111101000"; -- NaN
 			Y <= "01111111100101101011111111101000"; -- NaN
 			SUB <= '1'; 
-		  
 		  -- output should be NaN	
+
 		wait for 30 ns;
 		  
 			X <= "01111111100101101011000111101000"; -- NaN
 			Y <= "01111111100000000000011111101000"; -- NaN
 			SUB <= '0'; 
-		  
 		  -- output should be NaN			
-		  wait for 30 ns;
+
+		wait for 30 ns;
 		  
 			X <= "01111111100101101011000111101000"; -- NaN
 			Y <= "01111111100000000000000000000000"; -- inf
 			SUB <= '0'; 
-		  
-		  -- output should be NaN
-		  wait for 30 ns;
+			-- output should be NaN
+			
+		wait for 30 ns;
 		  
 			X <= "01111111011111111111111111111100"; -- Big numb
 			Y <= "01111111000000000000011000001101"; -- Big numb
 			SUB <= '0'; 
-		  
 		  -- output should be inf
-		  
-		   
-	
-			wait;
+
+	  wait;
    end process;
 
 end;

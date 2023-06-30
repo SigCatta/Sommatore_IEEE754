@@ -14,7 +14,7 @@ end DENORMALIZE;
 
 architecture Behavioral of DENORMALIZE is
 	component MUX is
-		generic(width : integer := 24);
+		generic(width : integer);
 		port( 
 			X : in  std_logic_vector (width - 1 downto 0);
 			Y : in  std_logic_vector (width - 1 downto 0);
@@ -88,6 +88,7 @@ begin
 		);
 		
 	U3: MUX							-- gives the smaller number's mantissa to the shifter
+		generic map(width => 24)
 		port map(
 			X => '1' & Y(22 downto 0),			-- x > y (s = 0) ~ give x to the shifter
 			Y => '1' & X(22 downto 0),			-- y > x (s = 1) ~ give y to the shifter
@@ -96,6 +97,7 @@ begin
 		);
 		
 	U4: MUX							-- gives the larger number's mantissa to a conditonal 2's complement (C2C) module
+		generic map(width => 24)
 		port map(
 			X => '1' & X(22 downto 0),			-- y > x (s = 1)
 			Y => '1' & Y(22 downto 0),			-- x > y (s = 0)
@@ -103,7 +105,7 @@ begin
 			Z => M2
 		);
 		
-	U5: MUX						-- converts X to it's 1's complement if necessary
+	U5: MUX							-- converts X to it's 1's complement if necessary
 		generic map(width => 25)
 		port map(
 			X => '0' & SM1,
@@ -119,18 +121,18 @@ begin
 			Z => DNORMY
 		);
 		
-	U7: MUX2						-- selects the correct sign for U5, the smaller number
+	U7: MUX2							-- selects the correct sign for U5, the smaller number
 		port map(
-			A => Y(31) xor SUB,							-- C = 0, get sign for Y
+			A => Y(31) xor SUB,						-- C = 0, get sign for Y
 			B => X(31),									-- C = 1, get sign for X
 			S => C,
 			Z => S1
 		);
-	
-	U8: MUX2						-- selects the correct sign for U6, the bigger number
+		
+	U8: MUX2							-- selects the correct sign for U6, the bigger number
 		port map(
 			A => X(31),									-- C = 0, get sign for X
-			B => Y(31) xor SUB,							-- C = 1, get sign for Y
+			B => Y(31) xor SUB,						-- C = 1, get sign for Y
 			S => C,
 			Z => S2
 		);

@@ -3,7 +3,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 
 entity C2C is
-    generic(width: integer := 8);
+    generic(width: integer);
     port(
         N    : in  std_logic_vector(width - 1 downto 0);
         S    : in  std_logic;
@@ -20,7 +20,7 @@ architecture STRUCT of C2C is
 			X    : in  std_logic_vector(width - 1 downto 0);
 			CIN  : in  std_logic;
 			S    : out std_logic_vector(width - 1 downto 0);
-			COUT : out std_logic     --CHECK might be useless
+			COUT : out std_logic
 		);
     end component;
 

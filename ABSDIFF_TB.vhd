@@ -10,10 +10,11 @@ architecture behavior of ABSDIFF_TB is
     -- Component Declaration for the Unit Under Test (UUT)
  
 	component ABSDIFF is
+		generic (width: integer);
 		port(
-         X : in  	  std_logic_vector(7 downto 0);
-			Y : in  	  std_logic_vector(7 downto 0);
-			Z : out 	  std_logic_vector(7 downto 0)
+         X : in  std_logic_vector(7 downto 0);
+			Y : in  std_logic_vector(7 downto 0);
+			Z : out std_logic_vector(7 downto 0)
 		);
 	end component;
     
@@ -28,8 +29,9 @@ architecture behavior of ABSDIFF_TB is
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: ABSDIFF 
-	port map (
+   UUT: ABSDIFF
+	generic map(width => 8)
+	port map(
       X => X,
       Y => Y,
       Z => Z

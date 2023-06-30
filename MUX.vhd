@@ -13,25 +13,24 @@ end MUX;
 
 architecture Behavioral of MUX is
 
-    component MUX2 is
-        port( 
-            A : in  std_logic;
-            B : in  std_logic;
+	component MUX2 is
+		port(
+			A : in  std_logic;
+			B : in  std_logic;
 			S : in  std_logic;
-            Z : out std_logic
-        );
-    end component;
-	 
+			Z : out std_logic
+		);
+	end component;
+
 begin
 
-	 GEN: for I in 0 to width - 1 generate
-        U: MUX2 port map(
-            A => X(I),
-            B => Y(I),
-            S => S,
-            Z => Z(I)
-        );
-    end generate;
+	GEN: for I in 0 to width - 1 generate
+		U: MUX2 port map(
+			A => X(I),
+			B => Y(I),
+			S => S,
+			Z => Z(I)
+		);
+	end generate;
 
 end Behavioral;
-

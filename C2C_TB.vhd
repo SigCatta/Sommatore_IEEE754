@@ -8,7 +8,7 @@ architecture behavior OF C2C_TB IS
  
  
    component C2C
-      generic(width: integer := 8);      -- using a 8 bit C2C
+      generic(width: integer);      -- using a 8 bit C2C
          port(
             N    : in  std_logic_vector(7 downto 0);
             S    : in  std_logic;
@@ -29,8 +29,9 @@ architecture behavior OF C2C_TB IS
 begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   UUT: C2C 
-   port map (
+	UUT: C2C
+	generic map(width => 8)	
+   port map(
       N    => N,
       S    => S,
       Z    => Z,

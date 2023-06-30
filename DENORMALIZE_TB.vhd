@@ -16,7 +16,7 @@ architecture behavior of DENORMALIZE_TB is
 			SUB    : in	 std_logic;
 			DNORMX : out std_logic_vector(24 downto 0);
 			DNORMY : out std_logic_vector(24 downto 0);
-			EXP	   : out std_logic_vector(7 downto 0)
+			EXP	 : out std_logic_vector(7 downto 0)
 		);
 	end component;
     
@@ -39,10 +39,10 @@ begin
 	port map (
 		X      => X,
 		Y      => Y,
-		SUB	   => SUB,
+		SUB	 => SUB,
 		DNORMX => DNORMX,
 		DNORMY => DNORMY,
-		EXP	   => EXP
+		EXP	 => EXP
 	);
 
    -- Stimulus process

@@ -24,7 +24,7 @@ architecture Behavioral of NORMALIZE is
 			C        : in  std_logic;
 			NEWMANTX : out std_logic_vector(22 downto 0);
 			NEWEXP   : out std_logic_vector(7 downto 0)
-	);
+		);
 	end component;
 	
 	component SNC is

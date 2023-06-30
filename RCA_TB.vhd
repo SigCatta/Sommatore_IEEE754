@@ -8,7 +8,7 @@ end RCA_TB;
  
 architecture behavior of RCA_TB is 
    component RCA
-	 generic(width: integer := 8);      -- using a 8 bit RCA
+	 generic(width: integer);      -- using a 8 bit RCA
     port(
          X 	  : in  std_logic_vector(7 downto 0);
          Y 	  : in  std_logic_vector(7 downto 0);

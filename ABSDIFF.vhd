@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 
 entity ABSDIFF is
-    generic(width: integer := 8);
+    generic(width: integer);
     port(
         X : in  std_logic_vector (width - 1 downto 0);
         Y : in  std_logic_vector (width - 1 downto 0);
@@ -62,11 +62,11 @@ begin
 
 	C <= not COUT;
 
-    U2: PA port map(
-        X => not S,
-        CIN => '1',
-        S => NOTS
-    );
+	U2: PA port map(
+		X => not S,
+		CIN => '1',
+		S => NOTS
+	);
 	 
 	U3: MUX port map(	 
         X => S,
