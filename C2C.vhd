@@ -25,9 +25,11 @@ architecture STRUCT of C2C is
     end component;
 
     signal PAIN : std_logic_vector(width - 1 downto 0);
+	signal vS   : std_logic_vector(width - 1 downto 0);
 begin
 	
-	PAIN <= not N when S = '1' else N;
+	vS <= (others => S);
+	PAIN <= N xor vS;
 	
 	U1: PA
 	port map(
