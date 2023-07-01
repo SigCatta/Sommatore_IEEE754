@@ -4,9 +4,9 @@ use ieee.std_logic_1164.ALL;
 entity ABSDIFF is
     generic(width: integer);
     port(
-        X : in  std_logic_vector (width - 1 downto 0);
-        Y : in  std_logic_vector (width - 1 downto 0);
-        Z : out std_logic_vector (width - 1 downto 0);
+        X : in  std_logic_vector(width - 1 downto 0);
+        Y : in  std_logic_vector(width - 1 downto 0);
+        Z : out std_logic_vector(width - 1 downto 0);
         C : out std_logic                              -- 1 if y is greater the x, 0 otherwise 
     );
 end ABSDIFF;
@@ -15,10 +15,10 @@ architecture STRUCT of ABSDIFF is
     component RCA is        -- subtracts X and Y
 		generic(width : integer := width);
 		port(
-			X    : in  std_logic_vector (width - 1 downto 0);
-			Y    : in  std_logic_vector (width - 1 downto 0);
+			X    : in  std_logic_vector(width - 1 downto 0);
+			Y    : in  std_logic_vector(width - 1 downto 0);
 			CIN  : in  std_logic;
-			S    : out std_logic_vector (width - 1 downto 0);
+			S    : out std_logic_vector(width - 1 downto 0);
 			COUT : out std_logic
 		);
 	end component;
@@ -26,9 +26,9 @@ architecture STRUCT of ABSDIFF is
 	component PA is         -- turns S to -S
 		generic(width : integer := width);
 		port(
-			X    : in  std_logic_vector (width - 1 downto 0);
+			X    : in  std_logic_vector(width - 1 downto 0);
 			CIN  : in  std_logic;
-			S    : out std_logic_vector (width - 1 downto 0);
+			S    : out std_logic_vector(width - 1 downto 0);
 			COUT : out std_logic
 		);
     end component;
@@ -36,16 +36,16 @@ architecture STRUCT of ABSDIFF is
     component MUX is       -- selects Si if positive, -Si otherwise
         generic(width : integer := width);
         port( 
-            X : in  std_logic_vector (width - 1 downto 0);        -- S
-            Y : in  std_logic_vector (width - 1 downto 0);        -- -S
+            X : in  std_logic_vector(width - 1 downto 0);        -- S
+            Y : in  std_logic_vector(width - 1 downto 0);        -- -S
             S : in  std_logic;        -- 1 if y is greater the x, 0 otherwise 
-            Z : out std_logic_vector (width - 1 downto 0)
+            Z : out std_logic_vector(width - 1 downto 0)
         );
     end component;
     
 	signal S    : std_logic_vector(width - 1 downto 0);     -- Ex - Ey
 	signal NOTS : std_logic_vector(width - 1 downto 0);     -- Ey - Ex
-	signal COUT  : std_logic;
+	signal COUT : std_logic;
 
 begin
 

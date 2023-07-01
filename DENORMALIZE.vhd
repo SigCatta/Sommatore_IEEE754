@@ -16,10 +16,10 @@ architecture Behavioral of DENORMALIZE is
 	component MUX is
 		generic(width : integer);
 		port( 
-			X : in  std_logic_vector (width - 1 downto 0);
-			Y : in  std_logic_vector (width - 1 downto 0);
+			X : in  std_logic_vector(width - 1 downto 0);
+			Y : in  std_logic_vector(width - 1 downto 0);
 			S : in  std_logic;
-			Z : out std_logic_vector (width - 1 downto 0)
+			Z : out std_logic_vector(width - 1 downto 0)
 		);
    end component;
 	 
@@ -34,9 +34,9 @@ architecture Behavioral of DENORMALIZE is
 	component C2C is								-- calculate the mantissa's 2's complement if necessary
 		generic(width: integer := 25);				-- needs to have an extra sign bit
 		port(
-			N    : in  std_logic_vector (width - 1 downto 0);
+			N    : in  std_logic_vector(width - 1 downto 0);
 			S    : in  std_logic;
-			Z    : out std_logic_vector (width - 1 downto 0);
+			Z    : out std_logic_vector(width - 1 downto 0);
 			COUT : out std_logic
 		);
 	end component;
@@ -44,9 +44,9 @@ architecture Behavioral of DENORMALIZE is
 	component ABSDIFF is							-- calculates the absolute difference of the exponents
 		generic(width: integer := 8);
 		port(
-			X : in  std_logic_vector (width - 1 downto 0);
-			Y : in  std_logic_vector (width - 1 downto 0);
-			Z : out std_logic_vector (width - 1 downto 0);
+			X : in  std_logic_vector(width - 1 downto 0);
+			Y : in  std_logic_vector(width - 1 downto 0);
+			Z : out std_logic_vector(width - 1 downto 0);
 			C : out std_logic
 		);
 	end component;
@@ -124,14 +124,14 @@ begin
 	U7: MUX2							-- selects the correct sign for U5, the smaller number
 		port map(
 			A => Y(31) xor SUB,						-- C = 0, get sign for Y
-			B => X(31),									-- C = 1, get sign for X
+			B => X(31),								-- C = 1, get sign for X
 			S => C,
 			Z => S1
 		);
 		
 	U8: MUX2							-- selects the correct sign for U6, the bigger number
 		port map(
-			A => X(31),									-- C = 0, get sign for X
+			A => X(31),								-- C = 0, get sign for X
 			B => Y(31) xor SUB,						-- C = 1, get sign for Y
 			S => C,
 			Z => S2
