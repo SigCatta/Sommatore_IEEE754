@@ -14,7 +14,8 @@ end DENORMALIZED_SUM;
 architecture Behavioral of DENORMALIZED_SUM is
 
 	component RCA is
-		port(
+			generic( width : integer);
+			port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			Y    : in  std_logic_vector (width - 1 downto 0);
 			CIN  : in  std_logic;
@@ -23,7 +24,8 @@ architecture Behavioral of DENORMALIZED_SUM is
 		);
 	end component;
 	
-	component PA is														-- calculates the result's 2's complement if necessary
+	component PA is		-- calculates the result's 2's complement if necessary
+		generic( width : integer);
 		port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			CIN  : in  std_logic;
@@ -33,7 +35,8 @@ architecture Behavioral of DENORMALIZED_SUM is
 	end component;
 	
 	
-	component MUX is														-- selects between the result and it's 2's complement
+	component MUX is		-- selects between the result and it's 2's complement
+		generic( width : integer);
 		port(
 			X : in  std_logic_vector (width - 1 downto 0);
 			Y : in  std_logic_vector (width - 1 downto 0);
