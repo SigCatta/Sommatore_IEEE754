@@ -48,7 +48,6 @@ architecture Behavioral of DENORMALIZED_SUM is
 	signal S    : std_logic_vector(25 downto 0);
 	signal NEGS : std_logic_vector(23 downto 0);
 
-
 begin
 
 	U1: RCA							-- each number has 1 sign bit, 1 extra bit for overflows, 1 extra 1 (not shown in mantissa), 23 mantissa bits
