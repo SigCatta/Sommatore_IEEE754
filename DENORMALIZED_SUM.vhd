@@ -14,7 +14,6 @@ end DENORMALIZED_SUM;
 architecture Behavioral of DENORMALIZED_SUM is
 
 	component RCA is
-		generic(width: integer := 26);
 		port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			Y    : in  std_logic_vector (width - 1 downto 0);
@@ -25,7 +24,6 @@ architecture Behavioral of DENORMALIZED_SUM is
 	end component;
 	
 	component PA is														-- calculates the result's 2's complement if necessary
-		generic(width: integer := 24);
 		port(
 			X    : in  std_logic_vector (width - 1 downto 0);
 			CIN  : in  std_logic;
@@ -36,7 +34,6 @@ architecture Behavioral of DENORMALIZED_SUM is
 	
 	
 	component MUX is														-- selects between the result and it's 2's complement
-		generic(width : integer := 24);
 		port(
 			X : in  std_logic_vector (width - 1 downto 0);
 			Y : in  std_logic_vector (width - 1 downto 0);
@@ -51,6 +48,7 @@ architecture Behavioral of DENORMALIZED_SUM is
 begin
 
 	U1: RCA							-- each number has 1 sign bit, 1 extra bit for overflows, 1 extra 1 (not shown in mantissa), 23 mantissa bits
+		generic map(width => 26)
 		port map(
 			X    => X(24) & X,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
 			Y    => Y(24) & Y,	-- adding the extra overflow bit (1 if the number is negative, 0 if positive)
@@ -62,6 +60,7 @@ begin
 	SIGN <= S(25);
 		
 	U2: PA
+		generic map(width => 24)
 		port map(
 			X   => not S(23 downto 0),
 			CIN => '1',
@@ -69,6 +68,7 @@ begin
 		);
 		
 	U3: MUX
+		generic map(width => 24)
 		port map(
 			X => S(23 downto 0),
 			Y => NEGS,

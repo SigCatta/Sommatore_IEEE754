@@ -32,7 +32,6 @@ architecture Behavioral of DENORMALIZE is
 	end component;
 	 
 	component C2C is								-- calculate the mantissa's 2's complement if necessary
-		generic(width: integer := 25);				-- needs to have an extra sign bit
 		port(
 			N    : in  std_logic_vector(width - 1 downto 0);
 			S    : in  std_logic;
@@ -42,7 +41,6 @@ architecture Behavioral of DENORMALIZE is
 	end component;
 	
 	component ABSDIFF is							-- calculates the absolute difference of the exponents
-		generic(width: integer := 8);
 		port(
 			X : in  std_logic_vector(width - 1 downto 0);
 			Y : in  std_logic_vector(width - 1 downto 0);
@@ -73,6 +71,7 @@ architecture Behavioral of DENORMALIZE is
 
 begin
 	U1: ABSDIFF						-- calculates the absolute difference between the exponents
+		generic map(width => 8)
 		port map(
 			X => X(30 downto 23),		-- X's exponent
 			Y => Y(30 downto 23),		-- Y's exponent
@@ -115,6 +114,7 @@ begin
 		);		
 
 	U6: C2C							-- converts the larger number to its 2's complement if necessary 
+		generic map(width => 25)
 		port map(
 			N => '0' & M2,
 			S => S2,
