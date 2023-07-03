@@ -10,6 +10,10 @@ Il secondo stadio si occupa di eseguire la somma tra le mantisse dei numeri deno
 Il terzo stadio si occupa in primo luogo di normalizzare il risultato ottenuto allo stadio precedente shiftando la mantissa M a destra o a sinistra in base all’output di un priority encoder e sottraendo al segnale EXP il numero di bit di cui la mantissa viene shiftata verso destra. Dopo aver ottenuto un numero normalizzato si controlla in base ai valori dei segnali PINF, NINF e NAN se il risultato deve essere modificato a causa di un operando speciale. Il segnale SIGN viene copiato nel bit più significativo del risultato per indicare il segno. <br>
 È bene ricordare che gli ingressi e le uscite sono campionate ogni 30 ns, l’output corretto sarà quindi disponibile solo dopo quattro cicli di clock.
 
+## Utilizzo
+Per testare il funzionamento del dispositivo è necessario creare un nuovo progetto sulla piattaforma [Xilinx ISE](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html), successivamente dopo aver aggiunto tutti i file .vhd al progetto (non è necessario aggiungere i test bench, il cui nome termina per _TB) si potrà procedere alla creazione di nuovi test bech per verificare il corretto funzionamento del dispositivo.<br>
+Si noti che l'implementazione presente è stata progettata e testa per un dispositivo Spartan6 XC6slx75T del package FGG676 con velocità -4, l'utilizzo di dispositivi diversi potrebbe non essere supportata.
+
 ## Membri del gruppo
 
 - [__Luca Cattani__](https://github.com/SigCatta)
