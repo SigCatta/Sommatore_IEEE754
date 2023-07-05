@@ -1,5 +1,5 @@
 # Prova Finale di Reti Logiche - 2023
-Valutazione 28/30
+Valutazione 28 / 30
 ## Specifica
 L'obbiettivo del progetto è l'implementazione di un sommatore floating point secondo lo standard IEEE754, comprensivo dei numeri speciali NaN e infinity, che calcoli correttamente la somma e la sottrazione esclusivamente di numeri normalizzati.
 Il sommatore deve essere realizzato mediante una architettura pipelined, scegliendo la suddivisione in stadi il più possibile bilanciati. <br>
